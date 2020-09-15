@@ -204,12 +204,12 @@ input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid
 .flex-events{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
 }
 .flex-events>.event-card{
-    width: 33%;
-    padding: 0 10px;
+    width: 370px;
+    padding: 30px 10px;
 }
 .w3-card-4, .w3-hover-shadow:hover {
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
@@ -228,7 +228,7 @@ input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	/* justify-content: center; */
 	background-color: #fff;
 	height: 100%;
 }
@@ -260,7 +260,22 @@ a .card-foot:hover{
 	
 	
 }
+.flex-events .image-card img{
+    position: relative;
+    top: 0;
+}
+.date-time ul{
+    display: inline;
+    font-size: 15px;
+}
 @media only screen and (max-width: 768px){
+    .flex-events>.event-card{
+        width: 100%;
+        padding: 30px 10px;
+    }
+    .flex-events .image-card{
+        width: 100%;
+    }
     .styled-input {
         width:100%;
     }
@@ -301,7 +316,7 @@ a .card-foot:hover{
     max-width: 100%;
 }
 
-input,
+/* input,
 textarea {
     padding: 30px;
     border: 0;
@@ -310,7 +325,7 @@ textarea {
     background-color: #2d2d2d;
     color: white;
     border-radius: 4px;
-}
+} */
 
 input:focus,
 textarea:focus { outline: 0; }
