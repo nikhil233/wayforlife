@@ -1,0 +1,464 @@
+<?php
+require('header.php');
+?>
+
+    <!-- banner part start-->
+    <section class="banner_part">
+        <div class="container">
+            <div class="row">
+                <div class=" col-lg-6 col-md-12 col-12 ">
+                    <div class="banner_text">
+                        <div class="banner_text_iner" >
+                            <h1>Bless others with
+                                your gift</h1>
+                            <p>Fish isn't thing there a god whales fruit gathering the second so
+                                third beginning open multiply in land multiply Saw saw lesser tree
+                                fom image his made heaven.</p>
+                                <div>
+                                <a href="Joinus" class="btn_2 mr-4">Join Us</a>
+                                <a href="#" class="btn_2">Donate</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-lg-6 col-md-12 col-12">
+                    <div class="container gol">
+                        <div class="shape"></div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner part start-->
+
+    <!-- about start-->
+    <section class="feature_part">
+        <div class="container">
+            <div class="row ">
+                <div class="col-xl-8">
+                    <div class="section_tittle text-center">
+                        <h2>About Way for Life</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <p class="about font-weight-bold ml-2" style="line-height: 30px;">
+                    <b> Way for Life </b> a registered, youth-driven NGO, based in Bengaluru, Karnataka, founded in the year 2017. The footsteps of our approaches to community development and environmental sustenance have been ideated and undertaken by the energetic body of youth volunteers who write our story through reshaping yours. What our action survives and thrives on is sustained by the dynamism of considerate, passionate young volunteers whose outlook on life aligns with ours! The desire to uplift the marginalized sections of the society, coupled with an equal emphasis on commonly neglected issues such as Blood requirements, Relief programs, and educational and environmental issues have comprised the major activities which Way for Life engages in. Our most referenced contribution to the field of Social Service is usually our involvement and intervention programs with Government schools.
+                    
+                </p>
+                <div class="text-center">
+                    <button type="button" class="btn_2 mt-4">Donate Now</button>
+                  </div>
+            </div>
+                <div class="row text-center">
+                    <div class="col-lg-6 col-sm-6 col-12 mt-4">
+                        <div class="single_feature ">
+                            <div class="single_feature_part">
+                                <div class=" d-flex align-items-center">
+                                    <img src="img/icon/feature_3.svg" alt="">
+                                    <h4>Vision</h4>
+                                </div>
+                                <p class="pb-5">We envision a continued, sustained upliftment in the lives of the people we work for through the collaborative efforts and ideas of all people who yearn for a positive change in the society.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-12 mt-4">
+                        <div class="single_feature">
+                            <div class="single_feature_part">
+                                <div class=" d-flex align-items-center">
+                                    <img src="img/icon/feature_4.svg" alt="">
+                                    <h4>Mission</h4>
+                                </div>
+                                <p class="pb-3">The core impetus for our tireless actions stems from our desire for improved, independent societies, whereby the problems of troubled communities and neglected environmental and social issues are brought changes to, through collective innovation and activity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </section>
+    <!-- about start-->
+
+
+    <!-- <section class="intro">
+        <p class="scroll-text">Scroll down</p>
+    </section>
+    <section class="anim">
+        <h1 data-lax-preset="rightToLeft-.1 fadeInOut">Animation</h1>
+        <p class="desc" data-lax-preset="blurInOut fadeInOut">Check out this nifty little scroll based animation with laxxx.js</p>
+        <div class="box1" data-lax-preset="spin"></div>
+        <div class="box2" data-lax-scale="700 0, 500 1, 100 1, 0 0" data-lax-anchor="self"></div>
+    </section>
+    <section></section> -->
+
+
+
+    <!-- top_service part start-->
+    <section class="be_part">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-6">
+                    <div class="be_part_text">
+                        <h2>Join Us</h2>
+                        <hr class="new4" style="border: 1.5px solid green;">
+                        <h4 class="text-light">Our aspirations are but aspirations if a collaboration or exchange of ideas, efforts, concern and resources is not achieved.
+                            We would love to have you along with us in creating a more beautiful tomorrow! Contribute your efforts for someone else’s livelihood, for a greener ecosystem, for a more ‘learning-centric’ and not ‘qualification-based’ system. Join us and add more meaning to your abilities, more hope to your suppressed worries and more joy in our collective achievements!</h4>
+                        <a href="#" class="btn_2 mt-4">Join us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="img/passion/work2.jpg" alt="" class="be_img">
+    </section>
+    <!-- top_service part end-->
+
+    <!-- counter part start-->
+    <section class="counter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="single_counter d-flex">
+                        <img src="img/icon/feature_1.svg" alt="">
+                        <div class="single_counter_text">
+                            <p>Total Collection</p>
+                            <span class="count">10,000</span>
+                        </div>
+                    </div>
+                    <div class="single_counter d-flex">
+                        <img src="img/icon/feature_2.svg" alt="">
+                        <div class="single_counter_text">
+                            <p>Helped People</p>
+                            <span class="count">1000</span><b>+</b>
+                        </div>
+                    </div>
+                    <div class="single_counter d-flex">
+                        <img src="img/icon/feature_3.svg" alt="">
+                        <div class="single_counter_text">
+                            <p>Total Volunteer</p>
+                            <span class="count">30</span>
+                        </div>
+                    </div>
+                    <div class="single_counter d-flex">
+                        <img src="img/icon/feature_4.svg" alt="">
+                        <div class="single_counter_text">
+                            <p>Successed Mission</p>
+                            <span class="count">10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- counter part end-->
+
+    <!--::passion part start::-->
+    <section class="passion_part section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8">
+                    <div class="section_tittle text-center">
+                        <p>Donation shows Passion</p>
+                        <h2>Our Works</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 col-xl-3">
+                    <div class="single-home-passion">
+                        <div class="card">
+                            <img src="img/passion/work1.jpg" class="card-img-top" alt="blog">
+                            <div class="card-body">
+
+                                <a href="passion.html">
+                                    <h5 class="card-title">Fourth created forth fill moving
+                                        created subdue be </h5>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-xl-3">
+                    <div class="single-home-passion">
+                        <div class="card">
+                            <img src="img/passion/work2.jpg" class="card-img-top" alt="blog">
+                            <div class="card-body">
+
+                                <a href="passion.html">
+                                    <h5 class="card-title">Fourth created forth fill moving
+                                        created subdue be </h5>
+                                </a>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-xl-3">
+                    <div class="single-home-passion">
+                        <div class="card">
+                            <img src="img/passion/work3.jpg" class="card-img-top" alt="blog">
+                            <div class="card-body">
+
+                                <a href="passion.html">
+                                    <h5 class="card-title">Fourth created forth fill moving
+                                        created subdue be </h5>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-xl-3">
+                    <div class="single-home-passion">
+                        <div class="card">
+                            <img src="img/passion/work4.jpg" class="card-img-top" alt="blog">
+                            <div class="card-body">
+
+                                <a href="passion.html">
+                                    <h5 class="card-title">Fourth created forth fill moving
+                                        created subdue be </h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--::passion part end::-->
+
+    <!-- intro_video_bg start-->
+    <section class="intro_video_bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="intro_video_iner text-center">
+                        <h2>Forget what you can get and
+                            see what you can give</h2>
+                        <a href="#" class="btn_2">Become a Volunteer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- intro_video_bg part start-->
+
+    <!-- ::volunteers_part start::-->
+    <!-- <section class="volunteers_part section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8">
+                    <div class="section_tittle text-center">
+                        <p>volunteers</p>
+                        <h2>Expert Volunteers</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="single_blog_item">
+                        <div class="single_blog_img">
+                            <img src="img/volunteers/volunteers_1.png" alt="doctor">
+                            <div class="social_icon">
+                                <a href="#"> <i class="ti-facebook"></i> </a>
+                                <a href="#"> <i class="ti-twitter-alt"></i> </a>
+                                <a href="#"> <i class="ti-instagram"></i> </a>
+                                <a href="#"> <i class="ti-skype"></i> </a>
+                            </div>
+                        </div>
+                        <div class="single_text">
+                            <div class="single_blog_text">
+                                <h3>David Phillips</h3>
+                                <p>Project Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="single_blog_item">
+                        <div class="single_blog_img">
+                            <img src="img/volunteers/volunteers_2.png" alt="doctor">
+                            <div class="social_icon">
+                                <a href="#"> <i class="ti-facebook"></i> </a>
+                                <a href="#"> <i class="ti-twitter-alt"></i> </a>
+                                <a href="#"> <i class="ti-instagram"></i> </a>
+                                <a href="#"> <i class="ti-skype"></i> </a>
+                            </div>
+                        </div>
+                        <div class="single_text">
+                            <div class="single_blog_text">
+                                <h3>Lindsa Rudolph</h3>
+                                <p>Field Supervisor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="single_blog_item">
+                        <div class="single_blog_img">
+                            <img src="img/volunteers/volunteers_3.png" alt="doctor">
+                            <div class="social_icon">
+                                <a href="#"> <i class="ti-facebook"></i> </a>
+                                <a href="#"> <i class="ti-twitter-alt"></i> </a>
+                                <a href="#"> <i class="ti-instagram"></i> </a>
+                                <a href="#"> <i class="ti-skype"></i> </a>
+                            </div>
+                        </div>
+                        <div class="single_text">
+                            <div class="single_blog_text">
+                                <h3>Samuel Gardner</h3>
+                                <p>Co Founder</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="single_blog_item">
+                        <div class="single_blog_img">
+                            <img src="img/volunteers/volunteers_4.png" alt="doctor">
+                            <div class="social_icon">
+                                <a href="#"> <i class="ti-facebook"></i> </a>
+                                <a href="#"> <i class="ti-twitter-alt"></i> </a>
+                                <a href="#"> <i class="ti-instagram"></i> </a>
+                                <a href="#"> <i class="ti-skype"></i> </a>
+                            </div>
+                        </div>
+                        <div class="single_text">
+                            <div class="single_blog_text">
+                                <h3>Lindsa Rudolph</h3>
+                                <p>Field Supervisor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> --> -->
+    <!-- ::volunteers_part end:: -->
+
+    <!--::blog_part start::-->
+    <section class="blog_part padding_bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8">
+                    <div class="section_tittle text-center">
+                        <p>OUr blog</p>
+                        <h2>Every Single Update</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="single_blog">
+                        <div class="appartment_img">
+                            <img src="img/blog_1.png" alt="">
+                        </div>
+                        <div class="single_appartment_content">
+                            <a href="blog.html">
+                                <h4>First cattle which earth unto let health for
+                                    can get and see what you
+                                </h4>
+                            </a>
+                            <ul class="list-unstyled">
+                                <li><a href=""> <span class="flaticon-calendar"></span> </a> May 10, 2019</li>
+                                <li><a href=""> <span class="flaticon-comment"></span> </a> 1 comments</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="right_single_blog">
+                        <div class="single_blog">
+                            <div class="media">
+                                <div class="media-body align-self-center">
+                                    <p><a href="#">healthy food</a></p>
+                                    <a href="blog.html">
+                                        <h5 class="mt-0"> Man does day divided morning after give .</h5>
+                                    </a>
+                                    <ul class="list-unstyled">
+                                        <li><a href=""> <span class="flaticon-calendar"></span> </a> May 10, 2019</li>
+                                        <li><a href=""> <span class="flaticon-comment"></span> </a> 1 comments</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_blog">
+                            <div class="media">
+                                <div class="media-body align-self-center">
+                                    <p><a href="#">healthy food</a></p>
+                                    <a href="blog.html">
+                                        <h5 class="mt-0"> To greater divide day hath fly moved was </h5>
+                                    </a>
+                                    <ul class="list-unstyled">
+                                        <li><a href=""> <span class="flaticon-calendar"></span> </a> May 10, 2019</li>
+                                        <li><a href=""> <span class="flaticon-comment"></span> </a> 1 comments</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_blog">
+                            <div class="media">
+                                <div class="media-body align-self-center">
+                                    <p><a href="#">healthy food</a></p>
+                                    <a href="blog.html">
+                                        <h5 class="mt-0"> That likeness isn't air earth seas had cattle </h5>
+                                    </a>
+                                    <ul class="list-unstyled">
+                                        <li><a href=""> <span class="flaticon-calendar"></span> </a> May 10, 2019</li>
+                                        <li><a href=""> <span class="flaticon-comment"></span> </a> 1 comments</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--::blog_part end::-->
+
+    
+
+    <!--::our client part start::-->
+    <section class="client_part padding_bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8">
+                    <div class="section_tittle text-center">
+                        <p>OUr Client</p>
+                        <h2>Worldwide Partners</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="client_logo owl-carousel">
+                        <div class="single_client_logo">
+                            <img src="img/client_logo/Logo_1.png" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="img/client_logo/Logo_2.png" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="img/client_logo/Logo_3.png" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="img/client_logo/Logo_4.png" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="img/client_logo/Logo_5.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--::our client part end::-->
+
+    
+
+
+ <?php
+require('footer.php');
+?>
