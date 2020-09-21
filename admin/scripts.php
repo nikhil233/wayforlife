@@ -83,9 +83,9 @@ class script extends DbConfig
     }
 
     // Redirect user
-    public function redirect($url) {
-        header("Location: $url");
-    }
+    // public function redirect($url) {
+    //     header("Location: $url");
+    // }
 
     // Log out user
     public function log_out() {

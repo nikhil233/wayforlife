@@ -15,7 +15,7 @@ else{
             font-size:20px;
         }
     </style>
-    <?php 
+        <?php 
             foreach ($result as $res) {
            ?>
         <div class="col-md-6">

@@ -19040,6 +19040,9 @@ textarea {
   resize: none;
   overflow-x: hidden;
 }
+.dataTables_filter{
+  text-align: right;
+}
 
 .btn, .fc button, .ajax-upload-dragdrop .ajax-file-upload, .swal2-modal .swal2-buttonswrapper .swal2-styled, .swal2-modal .swal2-buttonswrapper .swal2-styled.swal2-confirm, .swal2-modal .swal2-buttonswrapper .swal2-styled.swal2-cancel, .wizard > .actions a,
 .btn-group.open .dropdown-toggle,

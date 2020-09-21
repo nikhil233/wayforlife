@@ -44,8 +44,42 @@
 .banner_part p{
     color: #fff;
 }
+.banner-top{
+    position: relative;
+    padding-top: 250px;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* padding: 100px; */
+    overflow: hidden;
+    box-sizing: content-box;
+    
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
-  
+    /* background-blend-mode: screen; */
+    
+}
+.banner-top .content{
+   
+}
+.banner-top .content h2{
+    font-size: 3em;
+    color: #fff;
+}
+.banner-top .content .banner_text h1{
+    font-size: 130px;
+    color: #fff;
+}
+
+.wave{
+    position:absolute;
+    bottom: 0;
+    left: 0;
+}
 .value{
     width: 90%;
 }
@@ -229,7 +263,7 @@ input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid
 	
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-between; 
 	background-color: #fff;
 	height: 100%;
@@ -271,6 +305,15 @@ a .card-foot:hover{
     font-size: 15px;
 }
 @media only screen and (max-width: 768px){
+    .banner-top{
+        padding-top: 120px;
+        align-items: center;
+    }
+    .banner-top .content .banner_text h1{
+        font-size: 50px;
+        color: #fff;
+    }
+    
     .flex-events>.event-card{
         width: 100%;
         padding: 30px 10px;
@@ -420,6 +463,10 @@ input:focus {
     padding: 20px 0px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .banner-top .content .banner_text h1{
+        font-size: 100px;
+        color: #fff;
+    }
     .section_padding {
         padding: 80px 0px;
     }
@@ -431,6 +478,10 @@ input:focus {
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .banner-top .content .banner_text h1{
+        font-size: 70px;
+        color: #fff;
+    }
     .section_padding {
         padding: 70px 0px;
     }
@@ -442,6 +493,10 @@ input:focus {
     }
 }
 @media (max-width: 576px) {
+    .banner-top .content .banner_text h1{
+        font-size: 40px;
+        color: #fff;
+    }
     .section_padding {
         padding: 70px 0px;
     }
@@ -2169,16 +2224,16 @@ input:-internal-autofill-selected {
     }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
-    .banner_part .banner_text h1 {
+    .banner-top .banner_text h1 {
         font-size: 35px;
         margin-bottom: 15px;
         line-height: 1.4;
     }
 }
-.banner_part .banner_text h1 span {
+.banner-top .banner_text h1 span {
     color: #e8a87c;
 }
-.banner_part .banner_text p {
+.banner-top .banner_text p {
     font-size: 15px;
     line-height: 1.8;
     font-family: "Roboto", sans-serif;
@@ -2187,12 +2242,12 @@ input:-internal-autofill-selected {
     padding-right: 88px;
 }
 @media (max-width: 991px) {
-    .banner_part .banner_text p {
+    .banner-top .banner_text p {
         padding-right: 0;
     }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
-    .banner_part .banner_text p {
+    .banner-top .banner_text p {
         margin-top: 20px;
         padding-right: 50px;
     }
@@ -2202,12 +2257,12 @@ input:-internal-autofill-selected {
     width: 190px;
 }
 @media (max-width: 991px) {
-    .banner_part .banner_text .btn_2 {
+    .banner-top .banner_text .btn_2 {
         margin-top: 30px;
     }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
-    .banner_part .banner_text .btn_2 {
+    .banner-top .banner_text .btn_2 {
         margin-top: 20px;
     }
 }

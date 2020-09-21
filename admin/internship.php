@@ -22,7 +22,7 @@ $result=$crud->getData($sql);
                             <th >Indivisual/Group</th>
                             <th >Program/sector int to work</th>
                             <th >Group Size</th>
-                            <th >Actions</th>
+                            <th >added_on</th>
                         </tr>
                       </thead>
                       <tbody>

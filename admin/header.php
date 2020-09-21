@@ -2,6 +2,8 @@
 include_once("../classes/Crud.php");
 include_once("../classes/Validation.php");
 include_once("../classes/DbConfig.php");
+include_once("../classes/constant.php");
+include_once("../classes/functions.php");
 include_once("./scripts.php");
 $crud = new Crud();
 $validation = new Validation();
@@ -13,7 +15,7 @@ $curArr=explode('/',$curStr);
 $cur_path=$curArr[count($curArr)-1];
 
 if(!isset($_SESSION['IS_LOGIN'])){
-	$script->redirect('login');
+  redirect('login');
 }
 
 
@@ -50,8 +52,8 @@ if(!isset($_SESSION['IS_LOGIN'])){
           
         </ul>
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="index.html"><img src="assets/images/logo.png" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo.png" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="index.html"><img src="assets/images/logo-new.png" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-new.png" alt="logo"/></a>
         </div>
         <ul class="navbar-nav navbar-nav-right">
           
@@ -99,6 +101,18 @@ if(!isset($_SESSION['IS_LOGIN'])){
             <a class="nav-link" href="internship">
               <i class="mdi mdi-view-headline menu-icon"></i>
               <span class="menu-title">Internship Submission</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="events">
+              <i class="mdi mdi-view-headline menu-icon"></i>
+              <span class="menu-title">Events</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog_list">
+              <i class="mdi mdi-view-headline menu-icon"></i>
+              <span class="menu-title">Blog</span>
             </a>
           </li>
          

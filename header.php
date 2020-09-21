@@ -3,7 +3,7 @@
 include_once("classes/Crud.php");
 include_once("classes/Validation.php");
 include_once("classes/DbConfig.php");
-
+include_once("classes/constant.php");
 $crud = new Crud();
 $validation = new Validation();
 $db = new DbConfig();
@@ -48,7 +48,7 @@ $db = new DbConfig();
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index"> <img src="img/logo new.jpg" alt="logo"> </a>
+                        <a class="navbar-brand" href="index"> <img src="img/logo.png" alt="logo" style="max-width:150px;"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -64,9 +64,12 @@ $db = new DbConfig();
                                 <li class="nav-item">
                                     <a class="nav-link" href="aboutus">About</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="csr">CSR</a>
+                                </li>
 
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
+                                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Events
                                     </a>
@@ -79,7 +82,7 @@ $db = new DbConfig();
                                     <a class="nav-link" href="gallery">Gallery</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="gallery">Blog</a>
+                                    <a class="nav-link" href="blog">Blog</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"

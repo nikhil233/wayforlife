@@ -6,7 +6,9 @@ include_once("../classes/Validation.php");
 $script= new script();
 $crud = new Crud();
 $validation = new Validation();
-
+if($script->is_logged_in()){
+  header("location: index");
+}
 
 if(isset($_POST['login'])) {	
   $user_email=$crud->escape_string($_POST['email']);

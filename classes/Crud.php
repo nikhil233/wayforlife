@@ -14,9 +14,11 @@ class Crud extends DbConfig
 		
 		if ($result == false) {
 			return false;
+			echo "false";
 		} 
 		
 		$rows = array();
+		
 		
 		while ($row = $result->fetch_assoc()) {
 			$rows[] = $row;
