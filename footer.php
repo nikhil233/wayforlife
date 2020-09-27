@@ -1,15 +1,17 @@
-    <!-- footer part start-->
+
+   
+   
+   <!-- footer part start-->
     <footer class="footer-area">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-sm-6 col-md-4 col-xl-3">
                     <div class="single-footer-widget footer_1">
                         <a href="index.html"> <img src="img/logo new.jpg" alt=""> </a>
-                        <p>But when shot real her. Chamber her one visite removal six
-                             sending himself boys scot band exquisite existend anilas Give, 
-                             that likeness do isn't air earth seas had cattle tree. Give, that 
-                             likeness isn't air earth seas had 
-                            </p>
+                        <p> <b> Way for Life </b> 
+                     is a registered, youth-driven NGO, based in Bengaluru, Karnataka, founded in the year 2017. The footsteps of our approaches to community development and environmental sustenance have been ideated and undertaken by the energetic body of youth volunteers who write our story through reshaping yours.  
+                                </p>
+                       
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-xl-4">
@@ -17,18 +19,15 @@
                         <h4>Newsletter</h4>
                         <p>Stay updated with our latest trends Seed heaven so said place winged over given forth fruit.
                         </p>
-                        <div class="form-wrap" id="mc_embed_signup">
-                            <form target="_blank"
-                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                method="get" class="form-inline">
-                                <input class="form-control" name="EMAIL" placeholder="Your Email Address"
+                        <div class="form-wrap" id="">
+                            <form target=""
+                                action=""
+                                method="post" class="form-inline">
+                                <input class="form-control" name="email" placeholder="Your Email Address"
                                     onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
                                     required="" type="email">
-                                <button class="btn btn-default text-uppercase"><i class="ti-angle-right"></i></button>
-                                <div style="position: absolute; left: -5000px;">
-                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
-                                        type="text">
-                                </div>
+                                <button class="btn btn-default text-uppercase" name="new-submit" tabindex="-1" type="submit"><i class="ti-angle-right"></i></button>
+                               
 
                                 <div class="info"></div>
                             </form>
@@ -39,15 +38,22 @@
                             <a href="#"> <i class="ti-instagram"></i> </a>
                             <a href="#"> <i class="ti-skype"></i> </a>
                         </div>
+                        <ul class="mt-3" style="">
+                            <li><a href="policies">Privacy policy</a></li>
+                            <li><a href="faq">FAQ</a></li>
+                            
+                    </ul>
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-6 col-md-4">
                     <div class="single-footer-widget footer_2">
                         <h4>Contact us</h4>
-                        <p>Way For Life ,Bangalore</p>
+                        
                         <div class="contact_info">
-                            <p><span class="ti-mobile"></span> +91 999999999</p>
-                            <p><span class="ti-email"></span>info@wayforlife.com </p>
+                        <p><span class="ti-world"></span>No 28, 1st cross, 4th main
+                            BTM 4th stage, Bangalore - 560076</p>
+                            <p><span class="ti-mobile"></span> +91  789-999-3789</p>
+                            <p><span class="ti-email"></span><a href="mailto:contact@wayforlife.org ">contact@wayforlife.org </a> </p>
                             
                         </div>
                     </div>
@@ -61,11 +67,12 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This 
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This 
+                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -98,11 +105,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/jquery.ajaxchimp.min.js"></script>
     <script src="js/jquery.form.js"></script>
     <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
-    <script src="js/contact.js"></script>
-    <script src="js/ani.js"></script>
+    
+    
     <!-- custom js -->
     <script src="js/custom.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>

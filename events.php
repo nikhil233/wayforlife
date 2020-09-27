@@ -14,29 +14,10 @@ function validate() {
   }
   return true;
 }
-if(isset($_POST['submit'])) {	
-  $name = $crud->escape_string($_POST['name']);
-	$email = $crud->escape_string($_POST['email']);
-	$address = $crud->escape_string($_POST['address']);
-  $phone =  $crud->escape_string($_POST['phoneno']);
-  $event =  $crud->escape_string($_POST['event']);
-  $check_email = $validation->is_email_valid($_POST['email']);
-  $added_on=date('Y-m-d h:i:s');
+// if(isset($_POST['submit'])) {	
+ 
 
-  if (!$check_email) {
-		echo 'Please provide proper email.';
-	}	
-	else { 
-		
-    // $result = $crud->execute("INSERT INTO joinus(name,email_id,dob,phone_no,join_pre,hrsinmonth,profession,address,bloodgrp,intreststat) VALUES ('$name', '$email', '$dob', '999','a' ,'$hrsinmnth', 'a', '$address', '$bloodgrp','a' )");
-    $stmt = $mysqli->prepare("INSERT INTO event_participants (name,email_id,address,phone_no,event_name,added_on)VALUES (?, ?, ?, ?,?,'$added_on' )");
-    $stmt->bind_param('sssss',$name,$email,$address,$phone,$event);
-    $stmt->execute();
-    $stmt->close();
-	
-	}
-
-}
+// }
 
 $sql="SELECT * from events order by id desc";
 $result=$crud->getData($sql);
@@ -162,7 +143,7 @@ $result=$crud->getData($sql);
                     </button>
                   </div>
                   <div class="modal-body">
-                    <form method="post" name="form1">
+                    <form method="post" name="form1" id="event_sub">
                       <div class="form-group">
                         <label for="inputname" class="col-form-label">Name</label>
                         <input type="text" class="form-control" id="inputname" name="name">
@@ -185,7 +166,8 @@ $result=$crud->getData($sql);
                       
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                        <button type="submit" class="btn btn-primary" name="submit" id="event_submit" onclick="eventsubmit()">Submit</button>
+                        <p id="wait_" style="color:red;"></p>
                       </div>
                   </form>
                   </div>
@@ -202,6 +184,29 @@ $result=$crud->getData($sql);
         modal.find('.modal-body #inputevent').val(recipient);
       });
     });
+    
+    function eventsubmit(){
+	    $('#event_submit').attr('disabled',true);
+      $('#wait_').html('Please wait...');
+      jQuery.ajax({
+          url:'eve_vol_sub',
+          type:'post',
+          data:jQuery('#event_sub').serialize(),
+          success:function(result){
+            $('#event_submit').attr('disabled',false);
+            $('#wait_').html('');
+            var data=jQuery.parseJSON(result);
+            if(data.status=='success'){
+              $('#exampleModal').removeClass('show');
+              swal("Welcome!", "Events volunterring submitted succesfully.Please check email and mobile.", "success");
+            }
+            else{
+              swal("sorry!", "Events volunterring from was not submitted succesfully.Please try again .", "error");
+            }
+          }
+      });
+    }
+  
     </script>
 <?php
 require('footer.php');

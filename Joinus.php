@@ -1,56 +1,10 @@
 <?php
 require('header.php');
 include_once("config.php");
-function validate() {
-  if (document.form1.name.value == '') {
-    alert('Please provide your name');
-    document.form1.name.focus();				
-    return false;
-  }
-  if (document.form1.email.value == '') {
-    alert('Please provide your email');
-    document.form1.email.focus();
-    return false;
-  }
-  return true;
-}
-if(isset($_POST['submit'])) {	
-	$name = $crud->escape_string($_POST['name']);
-	$dob = $crud->escape_string($_POST['dob']);
-	$email = $crud->escape_string($_POST['email']);
-	$address = $crud->escape_string($_POST['address']);
-  $phone =  $crud->escape_string($_POST['phoneno']);
-  // $join_pre =  $crud->escape_string($_POST['join_pre']);
-  $hrsinmnth =  $crud->escape_string($_POST['hrsinmnth']);
-  $profession =  $crud->escape_string($_POST['profession']);
-  $bloodgrp =  $crud->escape_string($_POST['bloodgrp']);
-  $intreststat =  $crud->escape_string($_POST['intreststat']);
-  $check_email = $validation->is_email_valid($_POST['email']);
-  $dbCheckbox = "";
-    if(isset($_POST['join_pre'])){
-      $dbCheckbox = implode(',',$_POST['join_pre']);
-    }
-  
-	$added_on=date('Y-m-d h:i:s');
-	// checking empty fields
 
-	if (!$check_email) {
-		echo 'Please provide proper email.';
-	}	
-	else { 
-		// if all the fields are filled (not empty) 
-    // (name,email_id,dob,phone_no,join_pre,hrsinmonth,profession,address,bloodgrp,intreststat)
-		//insert data to database	
-    // $result = $crud->execute("INSERT INTO joinus(name,email_id,dob,phone_no,join_pre,hrsinmonth,profession,address,bloodgrp,intreststat) VALUES ('$name', '$email', '$dob', '999','a' ,'$hrsinmnth', 'a', '$address', '$bloodgrp','a' )");
-    $stmt = $mysqli->prepare("INSERT INTO joinus (name,dob,email_id,address,hrsinmonth,bloodgrp,phone_no,join_pre,profession,intreststat,added_on)VALUES (?, ?, ?, ?,? ,?, ?, ?, ?,?,'$added_on' )");
-    $stmt->bind_param('ssssisssss',$name,$dob,$email,$address,$hrsinmnth,$bloodgrp,$phone,$dbCheckbox,$profession,$intreststat);
-    $stmt->execute();
-    $stmt->close();
-		//display success message
-		// echo "<font color='green'>Data added successfully.";
-		// echo "<br/><a href='index.php'>View Result</a>";
-	}
-}
+// if(isset($_POST['submit'])) {	
+
+// }
 
 ?>
     <!-- banner part start-->
@@ -100,7 +54,7 @@ if(isset($_POST['submit'])) {
     </section>
     <section>
         <div class="container ">
-            <form name="form1" method="post" class="joinusform">
+            <form name="form1" method="post" class="joinusform" id="joinussub">
                 <div class="form-group">
                     <label for="inputname">Name</label>
                     <input type="text" class="form-control" id="inputname" name="name" placeholder="Name">
@@ -188,11 +142,34 @@ if(isset($_POST['submit'])) {
                     </ol>
                 </div>
                 
-                <button type="submit" name="submit" class="btn btn-primary mt-3">Submit</button>
+                <button type="submit" name="submit" class="btn btn-primary mt-3" id="joinsubmit" onclick="joinus_submit()">Submit</button>
+                <p id="wait_" style="color:red;"></p>
               </form>
         </div>
     </section>
 
+  <script type="text/javascript">
+    function joinus_submit(){
+	    $('#joinsubmit').attr('disabled',true);
+      $('#wait_').html('Please wait...');
+      jQuery.ajax({
+          url:'joinus_sub',
+          type:'post',
+          data:jQuery('#joinussub').serialize(),
+          success:function(result){
+            $('#joinsubmit').attr('disabled',false);
+            $('#wait_').html('');
+            var data=jQuery.parseJSON(result);
+            if(data.status=='success'){
+              swal("Welcome!", "Join us Form submitted succesfully.Please check email and mobile .", "success");
+            }
+            else{
+              swal("sorry!", "Join us Form  was not submitted succesfully.Please try again .", "error");
+            }
+          }
+      });
+    }
+  </script>
 <?php
 require('footer.php');
 ?>

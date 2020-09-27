@@ -39,7 +39,7 @@ if(isset($_POST['submit'])){
         ?>
             <div class="col-md-6 col-12">
             <img src="<?php echo SITE_GALLERY_IMAGE.$res['gallery_img']?>" alt="" class="mt-3" style="width:100%;">
-            <a href="gallery_img.php?id=<?php echo $res['id']?>" class="btn btn-primary">Delete</a>
+            <a href="gallery_img.php?id=<?php echo $res['id']?>" class="btn btn-primary" onclick="return confirm('Are you sure to delete?')">Delete</a>
             </div>
         <?php
         }

@@ -19,7 +19,11 @@ if(isset($_POST['login'])) {
     header("location: index");
   }
   else{
-    echo"try once again";
+    ?>
+    <script> 
+    alert("check password and email");
+    </script>
+    <?php
   }
 
 
@@ -64,6 +68,7 @@ if(isset($_POST['login'])) {
                   <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" name="password">
                 </div>
                 <div class="mt-3">
+                  <p id="error" style="color:red;"></p>
                   <button class="btn btn-primary" name="login" type="submit">Login</button>
                 </div>
                 

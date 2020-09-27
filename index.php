@@ -193,8 +193,7 @@ require('header.php');
                             <div class="card-body">
 
                                 <a href="passion.html">
-                                    <h5 class="card-title">Fourth created forth fill moving
-                                        created subdue be </h5>
+                                    <h5 class="card-title">Beach Clean up</h5>
                                 </a>
                                 
                             </div>
@@ -208,8 +207,7 @@ require('header.php');
                             <div class="card-body">
 
                                 <a href="passion.html">
-                                    <h5 class="card-title">Fourth created forth fill moving
-                                        created subdue be </h5>
+                                    <h5 class="card-title">Government School Development</h5>
                                 </a>
                                 
                             </div>
@@ -223,8 +221,7 @@ require('header.php');
                             <div class="card-body">
 
                                 <a href="passion.html">
-                                    <h5 class="card-title">Fourth created forth fill moving
-                                        created subdue be </h5>
+                                    <h5 class="card-title">Shelter home visit</h5>
                                 </a>
                                 
                             </div>
@@ -238,8 +235,7 @@ require('header.php');
                             <div class="card-body">
 
                                 <a href="passion.html">
-                                    <h5 class="card-title">Fourth created forth fill moving
-                                        created subdue be </h5>
+                                    <h5 class="card-title">Flood relief </h5>
                                 </a>
                             </div>
                         </div>
@@ -258,7 +254,7 @@ require('header.php');
                     <div class="intro_video_iner text-center">
                         <h2>Forget what you can get and
                             see what you can give</h2>
-                        <a href="#" class="btn_2">Become a Volunteer</a>
+                        <a href="Joinus" class="btn_2">Join us</a>
                     </div>
                 </div>
             </div>
@@ -356,7 +352,7 @@ require('header.php');
                 </div>
             </div>
         </div>
-    </section> --> -->
+    </section> -->
     <!-- ::volunteers_part end:: -->
 
     <!--::blog_part start::-->
@@ -371,70 +367,67 @@ require('header.php');
                 </div>
             </div>
             <div class="row">
+                <?php
+                $sql="SELECT * from blog order by id desc LIMIT 1 ";
+                $result=$crud->getData($sql);
+                $i=1;
+                foreach ($result as $res) {
+                   
+                ?>
                 <div class="col-lg-6">
                     <div class="single_blog">
                         <div class="appartment_img">
-                            <img src="img/blog_1.png" alt="">
+                            <img src="<?php echo SITE_BLOG_IMAGE.$res['blog_image'] ?>" alt="" style="width:100%; height:450px;">
                         </div>
                         <div class="single_appartment_content">
                             <a href="blog.html">
-                                <h4>First cattle which earth unto let health for
-                                    can get and see what you
+                                <h4><?php echo $res['blog_title']?>
                                 </h4>
                             </a>
                             <ul class="list-unstyled">
-                                <li><a href=""> <span class="flaticon-calendar"></span> </a> May 10, 2019</li>
-                                <li><a href=""> <span class="flaticon-comment"></span> </a> 1 comments</li>
+                                <li><a href=""> <span class="flaticon-calendar"></span> </a> <?php echo $res['added_on']?></li>
+                                <li><a href=""> <span class="flaticon-comment"></span> </a><?php echo $res['blog_author'] ?></li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                <?php
+                }
+                ?>
                 <div class="col-lg-6">
                     <div class="right_single_blog">
+                    <?php
+                        $sql="SELECT * from blog order by id desc LIMIT 5 ";
+                        $result=$crud->getData($sql);
+                        $i=1;
+                        foreach ($result as $res) {
+                            if($i==1){
+                                $i++;
+                                continue;
+                            }
+                    ?>
                         <div class="single_blog">
                             <div class="media">
                                 <div class="media-body align-self-center">
-                                    <p><a href="#">healthy food</a></p>
                                     <a href="blog.html">
-                                        <h5 class="mt-0"> Man does day divided morning after give .</h5>
+                                        <h5 class="mt-0"> <?php echo $res['blog_title']?></h5>
                                     </a>
                                     <ul class="list-unstyled">
-                                        <li><a href=""> <span class="flaticon-calendar"></span> </a> May 10, 2019</li>
-                                        <li><a href=""> <span class="flaticon-comment"></span> </a> 1 comments</li>
+                                        <li><a href=""> <span class="flaticon-calendar"></span> </a>  <?php echo $res['added_on']?></li>
+                                        <li><a href=""> <span class="flaticon-comment"></span> </a> <?php echo $res['blog_author'] ?></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="single_blog">
-                            <div class="media">
-                                <div class="media-body align-self-center">
-                                    <p><a href="#">healthy food</a></p>
-                                    <a href="blog.html">
-                                        <h5 class="mt-0"> To greater divide day hath fly moved was </h5>
-                                    </a>
-                                    <ul class="list-unstyled">
-                                        <li><a href=""> <span class="flaticon-calendar"></span> </a> May 10, 2019</li>
-                                        <li><a href=""> <span class="flaticon-comment"></span> </a> 1 comments</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_blog">
-                            <div class="media">
-                                <div class="media-body align-self-center">
-                                    <p><a href="#">healthy food</a></p>
-                                    <a href="blog.html">
-                                        <h5 class="mt-0"> That likeness isn't air earth seas had cattle </h5>
-                                    </a>
-                                    <ul class="list-unstyled">
-                                        <li><a href=""> <span class="flaticon-calendar"></span> </a> May 10, 2019</li>
-                                        <li><a href=""> <span class="flaticon-comment"></span> </a> 1 comments</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        
+                        $i++;
+                        }
+                        ?>
+                       
                     </div>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -443,13 +436,14 @@ require('header.php');
     
 
     <!--::our client part start::-->
-    <section class="client_part padding_bottom">
+   <!--::our client part start::-->
+   <section class="client_part padding_bottom">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-8">
                     <div class="section_tittle text-center">
-                        <p>OUr Client</p>
-                        <h2>Worldwide Partners</h2>
+                        <p>Our Client</p>
+                        <h2>Our Supporters</h2>
                     </div>
                 </div>
             </div>
@@ -457,25 +451,41 @@ require('header.php');
                 <div class="col-lg-12">
                     <div class="client_logo owl-carousel">
                         <div class="single_client_logo">
-                            <img src="img/client_logo/Logo_1.png" alt="">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/1200px-LinkedIn_Logo.svg.png" alt="">
                         </div>
                         <div class="single_client_logo">
-                            <img src="img/client_logo/Logo_2.png" alt="">
+                            <img src="https://resources.mynewsdesk.com/image/upload/c_limit,dpr_2.625,f_auto,h_700,q_auto,w_340/kithkjedmd9f57bvecsh.jpg" alt="">
                         </div>
                         <div class="single_client_logo">
-                            <img src="img/client_logo/Logo_3.png" alt="">
+                            <img src="https://mma.prnewswire.com/media/1155580/Goodera_Logo.jpg?p=publish" alt="">
                         </div>
                         <div class="single_client_logo">
-                            <img src="img/client_logo/Logo_4.png" alt="">
+                            <img src="https://etimg.etb2bimg.com/thumb/msid-74223256,width-1200,resizemode-4/.jpg" alt="">
                         </div>
                         <div class="single_client_logo">
-                            <img src="img/client_logo/Logo_5.png" alt="">
+                            <img src="https://i2.wp.com/www.fb101.com/wp-content/uploads/2019/02/Moet.jpg?fit=678%2C298&ssl=1" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="https://hccr.com/wp-content/uploads/2019/12/Sprinklr-Brand-Logo-PNG-RGB-logo-horiz-col.jpg" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="https://images.jdmagicbox.com/comp/mumbai/t7/022pxx22.xx22.161012111341.k7t7/catalogue/lawrence-and-mayo-opticians-pedder-road-mumbai-opticians-1oaqzpexhi.jpg?clr=#5b0b17" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="https://www.gavi.org/sites/default/files/investing/funding/1200px-Lions_Clubs_International_logo2.jpg" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="https://i.pinimg.com/originals/33/66/de/3366de27c412f66bf005257f1344ee48.jpg" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="https://i2.wp.com/www.fb101.com/wp-content/uploads/2019/02/Moet.jpg?fit=678%2C298&ssl=1" alt="">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!--::our client part end::-->
     <!--::our client part end::-->
 
     

@@ -13,26 +13,19 @@ class script extends DbConfig
     // Register new users
     public function register($user_name, $user_email, $user_password)
     {
-        try {
+        
             // Hash password
-            $user_hashed_password = password_hash($user_password, PASSWORD_DEFAULT);
+            $user_hashed_password = password_hash($user_password, PASSWORD_BCRYPT);
 
             // Define query to insert values into the users table
-            $sql = "INSERT INTO users(user_name, user_email, user_password) VALUES(:user_name, :user_email, :user_password)";
+            $stmt= $this->connection->stmt_init();
+            $sql = "INSERT INTO admin(username, email, password,role,status) VALUES(?, ?, ?,'1','1')";
 
             // Prepare the statement
-            $query = $this->connection->prepare($sql);
-
-            // Bind parameters
-            $query->bindParam(":user_name", $user_name);
-            $query->bindParam(":user_email", $user_email);
-            $query->bindParam(":user_password", $user_hashed_password);
-
-            // Execute the query
-            $query->execute();
-        } catch (PDOException $e) {
-            array_push($errors, $e->getMessage());
-        }
+            $stmt = $this->connection->prepare($sql);
+            $stmt->bind_param('sss', $user_name, $user_email,$user_hashed_password);
+            $stmt->execute();
+           
     }
 
     // Log in registered users with either their username or email and their password
@@ -43,19 +36,21 @@ class script extends DbConfig
             // Prepare the statement
             $stmt = $this->connection->prepare($sql);
             $stmt->bind_param('s', $user_email);
-
             $stmt->execute();
             $result = $stmt->get_result();
             while($rows = $result->fetch_assoc()){
-                if($rows['password']==$user_password){
+                $dbp=$rows['password'];
+                if(password_verify($user_password, $dbp)){
                     $_SESSION['IS_LOGIN']='yes';
                     $_SESSION['user_session'] = $rows['id'];
-                    $_SESSION['user_name'] = $rows['name'];
-                    echo $rows['name'];
+                    $_SESSION['user_name'] = $rows['username'];
+                    $_SESSION['admin_role'] = $rows['role'];
+                   
                     return true;
+                    
                 }
                 else{
-                    echo 'Error: cannot execute the command';
+                   
                     return false;
                 }
             }
@@ -73,7 +68,16 @@ class script extends DbConfig
             //     }
             // }
     }
-
+    public function changepass($pass){
+       $id = $_SESSION['user_session']; 
+       $user_hashed_password = password_hash($pass, PASSWORD_BCRYPT);
+       $stmt= $this->connection->stmt_init();
+       $sql = "UPDATE admin set password=? where id='$id' ";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bind_param('s',$user_hashed_password);
+        $stmt->execute();
+        return true;
+    }
     // Check if the user is already logged in
     public function is_logged_in() {
         // Check if user session has been set

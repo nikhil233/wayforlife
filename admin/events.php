@@ -1,6 +1,11 @@
 <?php
 require('header.php');
+if(isset($_GET['id'])){
 
+  $id =   $crud->escape_string($_GET['id']);
+  $result=$crud->delete( $id ,'events');
+  redirect('events');
+}
 $sql="SELECT * from events order by id desc";
 $result=$crud->getData($sql);
 ?>
@@ -44,6 +49,7 @@ $result=$crud->getData($sql);
                             <td>
                               <a href="add_event.php?id=<?php echo $res['id'] ?> "> <button class="btn btn-outline-primary">View</button></a>
                               <a href="show_vol.php?event_name=<?php echo $res['event_name'] ?> "> <button class="btn btn-outline-primary">Show volunteer</button></a>
+                              <a href="events.php?id=<?php echo $res['id']?>" onclick="return confirm('Are you sure to delete?')"><button class="btn btn-outline-primary mt-3">Delete</button></a>
                             </td>
                             
                         </tr>

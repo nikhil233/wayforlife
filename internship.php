@@ -15,40 +15,10 @@ function validate() {
   return true;
 }
 
-if(isset($_POST['submit'])) {	
-  
-	$name = $crud->escape_string($_POST['name']);
-	$email = $crud->escape_string($_POST['email']);
-    $phone =  $crud->escape_string($_POST['phoneno']);
-    $teamsize =  $crud->escape_string($_POST['teamsize']);
-    $collorg =  $crud->escape_string($_POST['collorg']);
-    $sector_work =  $crud->escape_string($_POST['sector_work']);
-   
-    $check_email = $validation->is_email_valid($_POST['email']);
-    $dbCheckbox = "";
-        if(isset($_POST['ind-grp'])){
-        $dbCheckbox = implode(',',$_POST['ind-grp']);
-        }
-	$added_on=date('Y-m-d h:i:s');
-	// checking empty fields
-
-	if (!$check_email) {
-		echo 'Please provide proper email.';
-	}	
-	else { 
-		// if all the fields are filled (not empty) 
-    // (name,email_id,dob,phone_no,join_pre,hrsinmonth,profession,address,bloodgrp,intreststat)
-		//insert data to database	
-    // $result = $crud->execute("INSERT INTO internship (name,email_id,col_org_name,prog_sec_int,phoneno,indi_group,group_size,added_on) VALUES ( '$name','$email','$collorg','$sector_work','$phone','$dbCheckbox','$teamsize','$added_on' )");
-    $stmt = $mysqli->prepare("INSERT INTO internship (name,email_id,col_org_name,prog_sec_int,phoneno,indi_group,group_size,added_on)VALUES ( ?,?,?,?,?,?,?,'$added_on' )");
-    $stmt->bind_param('ssssssi',$name,$email,$collorg,$sector_work,$phone, $dbCheckbox,$teamsize);
-    $stmt->execute();
-    $stmt->close();
-		//display success message
-		// echo "<font color='green'>Data added successfully.";
-		// echo "<br/><a href='index.php'>View Result</a>";
-	}
-}
+// if(isset($_POST['submit'])) {	
+ 
+	
+// }
 ?>
 <!-- banner part start-->
 <!-- <section class="banner_part">
@@ -89,6 +59,38 @@ if(isset($_POST['submit'])) {
     </section>
     <!-- banner part start-->
     <section>
+        <div class="text-center">
+        <p style="color:#000; font-size:20px;">If you want to check if you are an intern of WAY FOR LIFE or to verify internship <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Click here</button></p>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+              <form  method="post" class="mt-3">
+              <div class="form-group">
+                    <label for="internid">Intern Id</label>
+                    <input type="text" class="form-control" id="internid" name="intern_id" placeholder="Intern id">
+                  </div>
+              </form> 
+              <div id="showintern">
+              </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="checkintern()">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+        
+      
         <div class="container text-center">
             <p class="mt-3">The strengthening of our outreach is facilitated by the efforts of our interns. Our interns, who render their voluntary services come from varied professional and educational backgrounds which contributes to the comprehensive approach which Way for Life constantly adopts and adapts to. Their innate skills and abilities are enhanced through the different avenues of assistance they choose for themselves! Their contributions are integral steps that are fundamental for the sustenance of our interventions, and also mark the beginning of a life-long relationship between our interns, the organisation and the spirit of volunteerism. The design of our internships varies depending on the interest of our interns, but the knowledge and maturity that one receives through our internships have been almost identical in all of our interns! The diverse range of our activities has been the most crucial element of learning which all of our interns are equipped with, and subsequently benefit from, which eventually translates in their personal, educational and professional skills too.</p>
             
@@ -102,7 +104,7 @@ if(isset($_POST['submit'])) {
                 
             </div>
             
-            <form  name="form1" method="post" class="joinusform mt-3">
+            <form  name="form1" method="post" class="joinusform mt-3" id="internsub">
                 <div class="form-group">
                     <label for="inputname">Name</label>
                     <input type="text" class="form-control" id="inputname" name="name" placeholder="Name">
@@ -156,10 +158,61 @@ if(isset($_POST['submit'])) {
                 </div>
 
                 
-                <button type="submit" class="btn btn-primary mt-3" name="submit">Submit</button>
+                <button type="submit" class="btn btn-primary mt-3" name="submit" id="internsubmit" onclick="intern_submit()">Submit</button>
+                <p id="submit_msg" style="color:red;" ></p>
               </form>
         </div>
     </section>
+   
+   <script>
+   function checkintern(){
+  var intern_id=jQuery('#internid').val();
+  //alert(intern_id);
+    jQuery.ajax({
+      url:'get_intern_details.php',
+      type:'post',
+      data:'intern_id='+intern_id,
+      success:function(result){
+        
+        var data=jQuery.parseJSON(result);
+        
+        if(data.gen!=""){
+        var html='<ul><li>Name: '+data.intern_name+'</li> <li>Intern id: '+data.intern_id+'</li><li>Role : '+data.role+'</li><li>Duration : '+data.duration+'</li><li>Start date: '+data.start_date+'</li><li>End date: '+data.end_date+'</li></ul> <img src="img/genuine.png" style="width:100px; height:auto;"/>';
+        }
+        else{
+          var html='<h2>No such interns found for intern id  '+data.intern_id+'. </h2>'
+        }
+        jQuery('#showintern').html(html);
+
+      }
+
+    })
+    }
+    
+    function intern_submit(){
+	    $('#internsubmit').attr('disabled',true);
+      $('#submit_msg').html('Please wait...');
+      jQuery.ajax({
+          url:'internship_sub',
+          type:'post',
+          data:jQuery('#internsub').serialize(),
+          success:function(result){
+            $('#internsubmit').attr('disabled',false);
+            $('#submit_msg').html('');
+            var data=jQuery.parseJSON(result);
+            if(data.status=='success'){
+              swal("Welcome!", "Internship from submitted succesfully. Please check email and mobile ..", "success");
+            }
+            else{
+              swal("sorry!", "Internship from was not submitted succesfully.Please try again .", "error");
+            }
+          }
+      });
+    }
+  
+   
+
+   </script>
 
     <?php
 require('footer.php');

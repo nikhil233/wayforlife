@@ -76,7 +76,7 @@ if(isset($_POST['submit'])){
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail3">Blog Body</label>
-                      <textarea  name="blog_body" id="exampleInputEmail3" cols="100" rows="30" ><?php echo $blog_body?></textarea >
+                      <textarea class="form-control w-100"  name="blog_body" id="exampleInputEmail3" cols="100" rows="30" ><?php echo $blog_body?></textarea >
                     </div>
                     
                    

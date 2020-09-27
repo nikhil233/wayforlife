@@ -7,10 +7,10 @@ $result=$crud->getData($sql);
     <div class="container-fluid">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Data table</h4>
+              <h4 class="card-title">Join us table</h4>
               <div class="row grid_box">
                 <div class="col-12">
-                  <div class="table-responsive">
+                  <div class="table-responsive order-table  ov-h">
                     <table id="order-listing" class="table">
                       <thead>
                         <tr>

@@ -69,6 +69,56 @@ require('header.php');
        
     </section>
 
+    <section>
+       
+        <div class="container text-center d-flex justify-content-center">    
+            <div class="row ">
+              <div class="col-sm-3 ">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/1200px-LinkedIn_Logo.svg.png" class="img-responsive" style="width:100%" alt="Image">
+                
+              </div>
+              <div class="col-sm-3 "> 
+                <img src="https://resources.mynewsdesk.com/image/upload/c_limit,dpr_2.625,f_auto,h_700,q_auto,w_340/kithkjedmd9f57bvecsh.jpg" class="img-responsive" style="width:100%" alt="Image">
+                 
+              </div>
+              
+              <div class="col-sm-3 "> 
+                <img src="https://mma.prnewswire.com/media/1155580/Goodera_Logo.jpg?p=publish" class="img-responsive" style="width:100%" alt="Image">
+                
+              </div> 
+              <div class="col-sm-3 "> 
+                <img src="https://pbs.twimg.com/profile_images/1041952533051138048/EfjeIUCd.jpg" class="img-responsive" style="width:100%" alt="Image">
+                
+              </div>     
+              <div class="col-sm-3 "> 
+                <img src="https://i2.wp.com/www.fb101.com/wp-content/uploads/2019/02/Moet.jpg?fit=678%2C298&ssl=1" class="img-responsive" style="width:100%" alt="Image">
+                
+              </div>
+              <div class="col-sm-3">
+                <img src="https://hccr.com/wp-content/uploads/2019/12/Sprinklr-Brand-Logo-PNG-RGB-logo-horiz-col.jpg" class="img-responsive" style="width:100%" alt="Image">
+            
+              </div>
+              <div class="col-sm-3"> 
+                <img src="https://images.jdmagicbox.com/comp/mumbai/t7/022pxx22.xx22.161012111341.k7t7/catalogue/lawrence-and-mayo-opticians-pedder-road-mumbai-opticians-1oaqzpexhi.jpg?clr=#5b0b17" class="img-responsive" style="width:100%" alt="Image">
+                   
+              </div>
+              
+              <div class="col-sm-3"> 
+                <img src="https://www.gavi.org/sites/default/files/investing/funding/1200px-Lions_Clubs_International_logo2.jpg" class="img-responsive" style="width:100%" alt="Image">
+            
+              </div> 
+              <div class="col-sm-3"> 
+                <img src="https://i.pinimg.com/originals/33/66/de/3366de27c412f66bf005257f1344ee48.jpg" class="img-responsive" style="width:100%" alt="Image">
+            
+              </div>     
+              <div class="col-sm-3"> 
+                <img src="https://i2.wp.com/www.fb101.com/wp-content/uploads/2019/02/Moet.jpg?fit=678%2C298&ssl=1" class="img-responsive" style="width:100%" alt="Image">
+            
+              </div> 
+            </div>
+          </div>
+    </section>
+
 <?php
 require('footer.php');
 ?>

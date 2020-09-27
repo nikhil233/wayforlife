@@ -3,7 +3,15 @@ require('header.php');
 $sql="SELECT * from blog order by id desc";
 $result=$crud->getData($sql);
 ?>
+<style>
+.blog-body a{
+    color: #e8a87c !important;
+}
+.blog-body a:hover{
+    text-decoration:underline;
+}
 
+</style>
 <section class="banner-top" style="background-image: linear-gradient(to bottom,  rgb(104 133 154 / 88%), rgb(0 0 0 / 52%)), url(./img/passion/work4.jpg);">
         <div class="container">
       <div class="content">
@@ -144,9 +152,9 @@ $result=$crud->getData($sql);
                             <h1><?php echo $res['blog_title'] ?></h1>
                             <img src="<?php echo  SITE_BLOG_IMAGE.$res['blog_image'] ?>" alt="">
                             
-                            <p><?php echo $res['blog_body'] ?></p>
+                            <p class="blog-body"><?php echo $res['blog_body'] ?></p>
 
-                            <div class="auth" style="padding:20px 60px; background-color:#ececec;">
+                            <div class="auth mt-3" style="padding:20px 60px; background-color:#ececec;">
                                 <h2>Author : <?php echo $res['blog_author'] ?></h2>
                             <p>Adde on:<?php echo $res['added_on'] ?></p>
                             </div>

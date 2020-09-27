@@ -19,6 +19,7 @@ if(!isset($_SESSION['IS_LOGIN'])){
 }
 
 
+
 ?>
 
 <!DOCTYPE html>
@@ -63,10 +64,15 @@ if(!isset($_SESSION['IS_LOGIN'])){
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="profile.php?id=<?php echo $_SESSION['user_session'] ?> ">
+                <i class="mdi mdi-logout text-primary"></i>
+                Profile
+              </a>
               <a class="dropdown-item" href="logout.php">
                 <i class="mdi mdi-logout text-primary"></i>
                 Logout
               </a>
+             
             </div>
           </li>
           
@@ -75,6 +81,7 @@ if(!isset($_SESSION['IS_LOGIN'])){
               <span class="mdi mdi-menu"></span>
             </button>
           </li>
+          
         </ul>
       </div>
     </nav>
@@ -91,6 +98,15 @@ if(!isset($_SESSION['IS_LOGIN'])){
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
+          <?php 
+					 if($_SESSION['admin_role']==0){
+            echo"  <li class='nav-item'>
+                <a class='nav-link' href='Admin_management.php'>
+                  <i class='mdi mdi-view-headline menu-icon'></i>
+                  <span class='menu-title'>ADMIN MANAGMENT</span>
+                </a>
+              </li>";
+           }?>
           <li class="nav-item">
             <a class="nav-link" href="join-us">
               <i class="mdi mdi-view-headline menu-icon"></i>
@@ -115,6 +131,31 @@ if(!isset($_SESSION['IS_LOGIN'])){
               <span class="menu-title">Blog</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery_img">
+              <i class="mdi mdi-view-headline menu-icon"></i>
+              <span class="menu-title">Gallery</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact_sub">
+              <i class="mdi mdi-view-headline menu-icon"></i>
+              <span class="menu-title">Contact Submission</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="newsletter">
+              <i class="mdi mdi-view-headline menu-icon"></i>
+              <span class="menu-title">Newsletter</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="interns_data">
+              <i class="mdi mdi-view-headline menu-icon"></i>
+              <span class="menu-title">Interns Data</span>
+            </a>
+          </li>
+          
          
           
         </ul>

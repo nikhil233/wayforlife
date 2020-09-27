@@ -8,6 +8,38 @@ $crud = new Crud();
 $validation = new Validation();
 $db = new DbConfig();
 
+include_once("config.php");
+if(isset($_POST['new-submit'])) {	
+    $email = $crud->escape_string($_POST['email']);
+    $check_email = $validation->is_email_valid($_POST['email']);
+    $added_on=date('Y-m-d h:i:s');
+	// checking empty fields
+
+	if (!$check_email) {
+		echo 'Please provide proper email.';
+	}	
+	else { 
+		// if all the fields are filled (not empty) 
+    // (name,email_id,dob,phone_no,join_pre,hrsinmonth,profession,address,bloodgrp,intreststat)
+		//insert data to database	
+    // $result = $crud->execute("INSERT INTO joinus(name,email_id,dob,phone_no,join_pre,hrsinmonth,profession,address,bloodgrp,intreststat) VALUES ('$name', '$email', '$dob', '999','a' ,'$hrsinmnth', 'a', '$address', '$bloodgrp','a' )");
+    $msg='<h2>WELCOME TO WAY FOR LIFE</h2>
+    <p>Thanks for Subscribing our news letter.</p>';
+    $html= $crud->get_mail_template('',$msg);
+    $crud->send_mail($email,$html,"Thanks for Subscribing our Newsletter ");
+    
+    $stmt = $mysqli->prepare("INSERT INTO newsletter (email_id,added_on)VALUES (?,'$added_on' )");
+    $stmt->bind_param('s',$email);
+    $stmt->execute();
+    $stmt->close();
+		//display success message
+		// echo "<font color='green'>Data added successfully.";
+		// echo "<br/><a href='index.php'>View Result</a>";
+	}
+}
+
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -39,6 +71,7 @@ $db = new DbConfig();
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-1.12.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -96,7 +129,7 @@ $db = new DbConfig();
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
+                                    <a class="nav-link" href="contact">Contact</a>
                                 </li>
                                 
                             </ul>
