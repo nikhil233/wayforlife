@@ -69,7 +69,7 @@ require('header.php');
        
     </section>
 
-    <section>
+    <!-- <section>
        
         <div class="container text-center d-flex justify-content-center">    
             <div class="row ">
@@ -117,7 +117,58 @@ require('header.php');
               </div> 
             </div>
           </div>
+    </section> -->
+     <!--::our client part start::-->
+   <section class="client_part padding_bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8">
+                    <div class="section_tittle text-center">
+                        <p>Our Client</p>
+                        <h2>Our Supporters</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="client_logo owl-carousel">
+                        <div class="single_client_logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/1200px-LinkedIn_Logo.svg.png" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="https://resources.mynewsdesk.com/image/upload/c_limit,dpr_2.625,f_auto,h_700,q_auto,w_340/kithkjedmd9f57bvecsh.jpg" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="https://mma.prnewswire.com/media/1155580/Goodera_Logo.jpg?p=publish" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="https://etimg.etb2bimg.com/thumb/msid-74223256,width-1200,resizemode-4/.jpg" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="https://i2.wp.com/www.fb101.com/wp-content/uploads/2019/02/Moet.jpg?fit=678%2C298&ssl=1" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="https://hccr.com/wp-content/uploads/2019/12/Sprinklr-Brand-Logo-PNG-RGB-logo-horiz-col.jpg" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="https://images.jdmagicbox.com/comp/mumbai/t7/022pxx22.xx22.161012111341.k7t7/catalogue/lawrence-and-mayo-opticians-pedder-road-mumbai-opticians-1oaqzpexhi.jpg?clr=#5b0b17" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="https://www.gavi.org/sites/default/files/investing/funding/1200px-Lions_Clubs_International_logo2.jpg" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="https://i.pinimg.com/originals/33/66/de/3366de27c412f66bf005257f1344ee48.jpg" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="https://i2.wp.com/www.fb101.com/wp-content/uploads/2019/02/Moet.jpg?fit=678%2C298&ssl=1" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+    <!--::our client part end::-->
+    <!--::our client part end::-->
 
 <?php
 require('footer.php');

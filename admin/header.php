@@ -13,7 +13,7 @@ $script= new script();
 $curStr=$_SERVER['REQUEST_URI'];
 $curArr=explode('/',$curStr);
 $cur_path=$curArr[count($curArr)-1];
-
+session_regenerate_id();
 if(!isset($_SESSION['IS_LOGIN'])){
   redirect('login');
 }
@@ -103,7 +103,7 @@ if(!isset($_SESSION['IS_LOGIN'])){
             echo"  <li class='nav-item'>
                 <a class='nav-link' href='Admin_management.php'>
                   <i class='mdi mdi-view-headline menu-icon'></i>
-                  <span class='menu-title'>ADMIN MANAGMENT</span>
+                  <span class='menu-title'>Admin Management</span>
                 </a>
               </li>";
            }?>
@@ -152,7 +152,7 @@ if(!isset($_SESSION['IS_LOGIN'])){
           <li class="nav-item">
             <a class="nav-link" href="interns_data">
               <i class="mdi mdi-view-headline menu-icon"></i>
-              <span class="menu-title">Interns Data</span>
+              <span class="menu-title">Verified Interns</span>
             </a>
           </li>
           

@@ -41,7 +41,7 @@ class script extends DbConfig
             while($rows = $result->fetch_assoc()){
                 $dbp=$rows['password'];
                 if(password_verify($user_password, $dbp)){
-                    $_SESSION['IS_LOGIN']='yes';
+                    $_SESSION['IS_LOGIN']=yes;
                     $_SESSION['user_session'] = $rows['id'];
                     $_SESSION['user_name'] = $rows['username'];
                     $_SESSION['admin_role'] = $rows['role'];

@@ -13,23 +13,29 @@ $result=$crud->getData($sql);
   <div class="container-fluid">
           <div class="card">
             <div class="card-body">
-              <h4 class="grid_title">Events table</h4>
-              <a href="add_event.php" class="add_link">Add Event</a>
+            <div style="display:flex; justify-content:space-between;">
+              <h4 class="" style="">Events table
+              
+              </h4>
+              <div style="text-align:right; padding:10px 0;">
+              <a href="add_event.php" class="add_link btn btn-outline-primary" >Add Event</a>
+              </div>
+              </div>
               <div class="row grid_box">
                 <div class="col-12">
                   <div class="table-responsive">
                     <table id="order-listing" class="table">
                       <thead>
                         <tr>
-                            <th > #</th>
-                            <th >Event Name</th>
-                            <th >Event desc</th>
-                            <th >Event img</th>
-                            <th >Start date</th>
-                            <th >End Date</th>
-                            <th >Status</th>
-                            <th >Added on</th>
-                            <th >Actions</th>
+                            <th width="5%"> #</th>
+                            <th width="10%">Event Name</th>
+                            <th width="25%" >Event desc</th>
+                            <th width="10%">Event img</th>
+                            <th width="5%"> Location</th>
+                            <th width="10%">Start date</th>
+                            <th width="10%">End Date</th>
+                            <th width="10%">Status</th>
+                            <th width="20%">Actions</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -38,17 +44,23 @@ $result=$crud->getData($sql);
                         foreach ($result as $res) {
                         ?>
                         <tr>
+                          <style>
+                            td{
+                              word-break:break-word;
+                            }
+                          </style>
                             <td><?php echo $i?></td>
                             <td><?php echo $res['event_name']?></td>
                             <td><?php echo $res['event_desc']?></td>
                             <td><a target="_blank" href="<?php echo SITE_EVENT_IMAGE.$res['event_image']?>"><img src="<?php echo SITE_EVENT_IMAGE.$res['event_image']?>"/></a></td>
+                            <td><?php echo $res['location']?></td>
                             <td><?php echo $res['startdate_time']?></td>
                             <td><?php echo $res['enddate_time']?></td>
                             <td><?php echo $res['status']?></td>
-                            <td><?php echo $res['added_on']?></td>
+                            
                             <td>
-                              <a href="add_event.php?id=<?php echo $res['id'] ?> "> <button class="btn btn-outline-primary">View</button></a>
-                              <a href="show_vol.php?event_name=<?php echo $res['event_name'] ?> "> <button class="btn btn-outline-primary">Show volunteer</button></a>
+                              <a href="add_event.php?id=<?php echo $res['id'] ?> "> <button class="btn btn-outline-primary">Edit</button></a>
+                              <a href="show_vol.php?event_name=<?php echo $res['event_name'] ?> "> <button class="btn btn-outline-primary mt-3" style="word-break:break-word;">Show volunteer</button></a>
                               <a href="events.php?id=<?php echo $res['id']?>" onclick="return confirm('Are you sure to delete?')"><button class="btn btn-outline-primary mt-3">Delete</button></a>
                             </td>
                             

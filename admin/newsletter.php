@@ -7,7 +7,7 @@ $result=$crud->getData($sql);
   <div class="container-fluid">
           <div class="card">
             <div class="card-body">
-              <h4 class="grid_title">Contact Submission</h4>
+              <h4 class="grid_title">Newsletter Submission</h4>
               
               <div class="row grid_box">
                 <div class="col-12">

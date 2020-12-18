@@ -22,7 +22,7 @@ if(isset($_GET['id']) && $_GET['id']>0){
 if(isset($_POST['submit'])){
     $blog_title=$crud->escape_string($_POST['blog_title']);
     $blog_author=$crud->escape_string($_POST['blog_author']);
-    $blog_body=$crud->escape_string($_POST['blog_body']);
+    $blog_body=nl2br($crud->escape_string($_POST['blog_body']));
     $added_on=date('Y-m-d');
     $type=$_FILES['image']['type'];
     if($id==""){
@@ -44,7 +44,7 @@ if(isset($_POST['submit'])){
             }else{
                 $image=rand(111111111,999999999).'_'.$_FILES['image']['name'];
                 move_uploaded_file($_FILES['image']['tmp_name'],SERVER_BLOG_IMAGE.$image);
-                $image_condition=", image='$image'";
+                $image_condition=", blog_image='$image'";
                 
                 $oldImageRow = $crud->getData("select blog_image from blog where id='$id'");
                 $oldImage=$oldImageRow[0]['blog_image'];
@@ -53,7 +53,8 @@ if(isset($_POST['submit'])){
             }
             }
             if($image_error==''){
-              $result= $crud->execute("UPDATE blog set blog_title='$blog_title',blog_author='$blog_author',blog_body='$blog_body' $image_condition where id='$id' ");
+
+              $result= $crud->execute("UPDATE blog set blog_title='$blog_title',blog_author='$blog_author',blog_body='$blog_body' $image_condition WHERE id='$id' ");
           
             }
             redirect('blog_list');
@@ -75,8 +76,8 @@ if(isset($_POST['submit'])){
                       <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="blog_title"  value="<?php echo $blog_title?>" required>
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail3">Blog Body</label>
-                      <textarea class="form-control w-100"  name="blog_body" id="exampleInputEmail3" cols="100" rows="30" ><?php echo $blog_body?></textarea >
+                      <label for="blog_body">Blog Body</label>
+                      <textarea class="form-control w-100"  name="blog_body" id="blog_body" cols="100" rows="30" ><?php echo $blog_body?></textarea >
                     </div>
                     
                    

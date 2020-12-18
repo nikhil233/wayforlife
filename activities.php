@@ -18,7 +18,7 @@ require('header.php');
             </div>
         </div>
     </section> -->
-    <section class="banner-top" style="background-image: linear-gradient(to bottom,  rgb(104 133 154 / 88%),rgb(0 0 0 / 52%)), url(./img/passion/work4.jpg);">
+    <section class="banner-top" style="background-image: linear-gradient(to bottom,  rgb(104 133 154 / 88%),rgb(0 0 0 / 52%)), url(./img/hero/ouractivities.jpg);">
         <div class="container">
       <div class="content">
        
@@ -94,7 +94,7 @@ require('header.php');
                         </p>
                     </div>
                     <div class="reg-img">
-                        <img src="img/passion/work2.jpg" alt="">
+                        <img src="img/passion/work2.jpg" alt="clients">
                     </div>
                 </div>
                 <div class="flex-reg-act">
@@ -103,7 +103,7 @@ require('header.php');
                         <p class="black-text">The strengthening of our outreach is facilitated by the efforts of our interns. Our interns, who render their voluntary services come from varied professional and educational backgrounds which contributes to the comprehensive approach which Way for Life constantly adopts and adapts to. Their innate skills and abilities are enhanced through the different avenues of assistance they choose for themselves! Their contributions are integral steps that are fundamental for the sustenance of our interventions, and also mark the beginning of a life-long relationship between our interns, the organisation and the spirit of volunteerism. The design of our internships varies depending on the interest of our interns, but the knowledge and maturity that one receives through our internships has been almost identical in all of our interns! The diverse range of our activities has been the most crucial element of learning which all of our interns are equipped with, and subsequently benefit from, which eventually translates in their personal, educational and professional skills too.</p>
                     </div>
                     <div class="reg-img">
-                        <img src="img/passion/work2.jpg" alt="">
+                        <img src="img/passion/internship333.jpg" alt="internship">
                     </div>
                 </div>
                 <div class="flex-reg-act">
@@ -112,7 +112,7 @@ require('header.php');
                         <p class="black-text">Cleanathons are one-day clean up drives which leave an indelible impact on all our volunteers and partners. Urban spaces are often prone to being misused by the general public who may traverse through an area. Careless attitudes and practices like our refusal to throw plastic packets in dustbins to unhealthy transference and disposal of wet and dry waste in an open space, pose dangerous risks to the environment and the livelihood of people who abide in the surrounding areas. Our Cleanathons aim at restoring the damage done to such locations, by creating a more environment-friendly surrounding, decorated with cleaner, colourful walls! These paintings have etched an indelible awareness on passersby, and the cleanliness in these locations is maintained by the local residents of these locations.</p>
                     </div>
                     <div class="reg-img">
-                        <img src="img/passion/work2.jpg" alt="">
+                        <img src="img/passion/beachcleanup333.jpeg" alt="beachcleanup">
                     </div>
                 </div>
                 <div class="flex-reg-act">
@@ -121,7 +121,7 @@ require('header.php');
                         <p class="black-text">Complying with our emphasis on learner-centric assistance and independence, volunteers of Way for Life construct reading spaces in many Shelter Homes for the children to develop an imaginative and creative mindset. These ‘Reading Spaces’ are equipped with libraries filled with books which cater to the children’s interests and unanswered questions. Our installation of physical libraries, made attractive with fancy artwork that adorn the walls of these Shelter Homes – with numericals or learning tips etc. (which are painted by our volunteers) – have had significant positive effects. In our assessment of the impact created by our multiple ‘Reading Space’ projects, we have noticed that the provision of a Library and a Reading Space has not only caused an ignition of curiosity in the minds of young readers, but also an independency in their approach to learning! </p>
                     </div>
                     <div class="reg-img">
-                        <img src="img/passion/work2.jpg" alt="">
+                        <img src="img/passion/readingspace333.jpg" alt="readingspace">
                     </div>
                 </div>
                 <div class="flex-reg-act">
@@ -133,7 +133,7 @@ require('header.php');
                             </p>
                     </div>
                     <div class="reg-img">
-                        <img src="img/passion/work2.jpg" alt="">
+                        <img src="img/passion/govtschool333.jpg" alt="govtschool">
                     </div>
                 </div>
                 <div class="flex-reg-act">
@@ -143,7 +143,7 @@ require('header.php');
                         </p>
                     </div>
                     <div class="reg-img">
-                        <img src="img/passion/work2.jpg" alt="">
+                        <img src="img/passion/joyofgiving333.jpg" alt="joyofgiving">
                     </div>
                 </div>
                 <div class="flex-reg-act">
@@ -152,7 +152,7 @@ require('header.php');
                         <p class="black-text">Creating awareness about issues which plague the society and giving exposure to our volunteers is just the initial step towards instigating corrective action. Way for Life emphasises on a ‘reaction’ to situations which need improvement. ‘Shelter Home Visits’ are much more than what the name suggests. These visits are conducted with the motive of understanding the nuances of running a Shelter Home and reporting the problems faced by these entities. Their requirements are then catalogued and after these resources required are obtained by us, the Shelter Homes that have been visited become a recipient of support – infrastructural construction, food supply and/or manpower – acquired through the voluntary service of our volunteers.</p>
                     </div>
                     <div class="reg-img">
-                        <img src="img/passion/work2.jpg" alt="">
+                        <img src="img/passion/Shelterhomevisit333.jpg" alt="Shelterhomevisit">
                     </div>
                 </div>
                 <div class="flex-reg-act">
@@ -162,7 +162,7 @@ require('header.php');
                         </p>
                     </div>
                     <div class="reg-img">
-                        <img src="img/passion/work2.jpg" alt="">
+                        <img src="img/passion/litedu333.jpg" alt="litedu">
                     </div>
                 </div>
                 <div class="flex-reg-act">
@@ -173,7 +173,7 @@ require('header.php');
                             </p>
                     </div>
                     <div class="reg-img">
-                        <img src="img/passion/work2.jpg" alt="">
+                        <img src="img/passion/floodrelief333.jpg" alt="floodrelief">
                     </div>
                 </div>
                 <div class="flex-reg-act">
@@ -183,7 +183,7 @@ require('header.php');
                         </p>
                     </div>
                     <div class="reg-img">
-                        <img src="img/passion/work2.jpg" alt="">
+                        <img src="img/passion/lakecleanup333.jpeg" alt="lakecleanup">
                     </div>
                 </div>
                 <div class="flex-reg-act">
@@ -193,7 +193,7 @@ require('header.php');
                             <br><br> The educational assistance has further transformed into a regular space of our involvement. The installation of Libraries and Reading Spaces in these Shelter Homes which cater to the children’s creativity, conducting of Workshops where children learn practical skills (like upcycling) while also imparting transferrable skills to the caretakers – by equipping them with techniques that help economise the finances of the Shelter Homes (like Kitchen Gardening) – make our ‘Lit Education’ model much more comprehensive than its name might suggest. In addition to these, trees that are planted from our Plantree and Entree events are done within the spaces of our Shelter Homes; the produce made in our collaborative CSR projects and workshops too is also given back to our Shelter Homes! What started as a model for our volunteers to ‘teach’ or impart what they knew has now transformed into a space of constant learning for them too!</p>
                     </div>
                     <div class="reg-img">
-                        <img src="img/passion/work2.jpg" alt="">
+                        <img src="img/passion/litedu333.jpg" alt="">
                     </div>
                 </div>
                 <div class="flex-reg-act">
@@ -202,7 +202,7 @@ require('header.php');
                         <p class="black-text">Our intervention in Shelter Homes is not restricted to the children only. Our initiatives are also directed towards the overall functioning and sustenance of the independent Shelter Home too. The projects we design cater to the caretakers too, to relieve the pressure and workload. In order to help reduce the struggle of managing their limited finances, we encourage and teach methods to enhance their financial independency. The most effective medium to achieve this are the Kitchen Gardens we help construct. The produce which these small plots yield goes back to the Shelter Home itself, which is then utilised as their food supply. This serves as a constant source of material support for these Shelter Homes, who then teach these skills (gardening etc.) to the children too.</p>
                     </div>
                     <div class="reg-img">
-                        <img src="img/passion/work2.jpg" alt="">
+                        <img src="img/passion/kitchengardening333.jpg" alt="">
                     </div>
                 </div>
                 <div class="flex-reg-act">
@@ -211,7 +211,7 @@ require('header.php');
                         <p class="black-text">The natural physical changes that our body goes through is unfortunately still regarded a taboo in the Indian society. The attention that our body requires is therefore inadequately addressed as its care is forced to be done implicitly, or in most cases (which is also the worst case), such issues are simply ignored. This ignorance poses a grave threat to our physical and mental health. To change the prominence of this practice, we develop Hygiene Kits for the female children in our Shelter Homes. Through this initiative, physical awareness is created which ultimately facilitates their physical and mental health. The inclusion of this initiative is but one of the many minute areas which our work focuses on; what is generally left ignored or neglected are issues which we encourage to set right and shed light on.</p>
                     </div>
                     <div class="reg-img">
-                        <img src="img/passion/work2.jpg" alt="">
+                        <img src="img/passion/girlsHygiene333.jpg" alt="">
                     </div>
                 </div>
                 <div class="flex-reg-act">
@@ -220,7 +220,7 @@ require('header.php');
                         <p class="black-text">Mental Health awareness campaigns, which are comprised of a plethora of activities – from online campaigns to workshops and training – are designed to help all of our volunteers, partners and beneficiaries to be aware of the possible threats which our mental health might be susceptible to. Lessons and topics that are discussed in these engaging workshops are crafted with a keen consideration of the target group in attendance; Mental Health workshops in Shelter Homes differ greatly in their content to the ones we conduct in Government schools.The relevance of the content is studied upon with feedback sessions and a provision of remedy measures too, for any mental health concerns that may erupt or be faced by any of our associates.</p>
                     </div>
                     <div class="reg-img">
-                        <img src="img/passion/work2.jpg" alt="">
+                        <img src="img/passion/Mentalhealth333.jpg" alt="">
                     </div>
                 </div>
             </div>

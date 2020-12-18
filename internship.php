@@ -39,7 +39,7 @@ function validate() {
             </div>
         </div>
     </section> -->
-    <section class="banner-top" style="background-image: linear-gradient(to bottom,  rgb(104 133 154 / 88%), rgb(0 0 0 / 52%)), url(./img/passion/work4.jpg);">
+    <section class="banner-top" style="background-image: linear-gradient(to bottom,  rgb(104 133 154 / 88%), rgb(0 0 0 / 52%)), url(./img/hero/internship.jpg);">
         <div class="container">
       <div class="content">
        
@@ -60,7 +60,7 @@ function validate() {
     <!-- banner part start-->
     <section>
         <div class="text-center">
-        <p style="color:#000; font-size:20px;">If you want to check if you are an intern of WAY FOR LIFE or to verify internship <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Click here</button></p>
+        <p style="color:#000; font-size:20px;">If you want to check if you are an intern of WAY FOR LIFE or to verify internship <button type="button" class="btn btn-primary button" data-toggle="modal" data-target="#exampleModalCenter">Click here</button></p>
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -82,7 +82,7 @@ function validate() {
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="checkintern()">Submit</button>
+                <button type="button" class="btn btn-primary" id="checkinternsubmit">Submit</button>
               </div>
             </div>
           </div>
@@ -107,40 +107,41 @@ function validate() {
             <form  name="form1" method="post" class="joinusform mt-3" id="internsub">
                 <div class="form-group">
                     <label for="inputname">Name</label>
-                    <input type="text" class="form-control" id="inputname" name="name" placeholder="Name">
+                    <input type="text" class="form-control" id="inputname" name="name" placeholder="Name" required>
                   </div>
                 
                   <div class="form-group ">
                     <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email">
+                    <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email"  required>
                   </div>
                   <div class="form-group ">
                     <label for="inputcoll">College / Organisation Name.</label>
-                    <input type="text" class="form-control" id="inputcoll" name="collorg" placeholder="">
+                    <input type="text" class="form-control" id="inputcoll" name="collorg" placeholder="" required>
                   </div>
                 
                 <div class="form-group">
                   <label for="inputpro">Program / Sector interested to work </label>
-                  <input type="text" class="form-control" id="inputpro" placeholder="" name="sector_work">
+                  <input type="text" class="form-control" id="inputpro" placeholder="" name="sector_work" required>
                 </div>
                 
                 
                     <div class="form-group">
                         <label for="inputno">Phone No.</label>
-                        <input type="text" class="form-control" id="inputno" placeholder="" name="phoneno">
+                        <input type="number" required class="form-control no-arrow" id="inputno" placeholder="" name="phoneno">
+                        <p id="ph_msg" style="color:red;"></p> 
                     </div>
                  
                 
                 <div>
                     <label for="inputdedic">Individual / Group ? </label>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="ind-grp[]" value="Indivisual">
+                        <input class="form-check-input" type="radio" name="ind-grp[]" value="Indivisual">
                         <label class="form-check-label text-dark" for="defaultCheck1">
                             Individual
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="ind-grp[]" value="Group" >
+                        <input class="form-check-input" type="radio" name="ind-grp[]" value="Group"  >
                         <label class="form-check-label text-dark" for="defaultCheck2">
                             Group
                         </label>
@@ -152,68 +153,21 @@ function validate() {
                 <div class=" mt-3">
                   <div class="form-group ">
                     <label for="teamsize">If group, Including you what is the team Size ?</label>
-                    <input type="number" class="form-control" id="teamsize" name="teamsize" value="1"\>
+                    <div class="pro-qty">
+                    <input type="number" class="form-control no-arrow" id="teamsize" name="teamsize" value="1" readonly required\>
+                    </div>
+                    
                   </div>
                   
                 </div>
 
                 
-                <button type="submit" class="btn btn-primary mt-3" name="submit" id="internsubmit" onclick="intern_submit()">Submit</button>
+                <button type="submit" class="btn btn-primary mt-3 button" name="submit" id="internsubmit"  >Submit</button>
                 <p id="submit_msg" style="color:red;" ></p>
               </form>
         </div>
     </section>
    
-   <script>
-   function checkintern(){
-  var intern_id=jQuery('#internid').val();
-  //alert(intern_id);
-    jQuery.ajax({
-      url:'get_intern_details.php',
-      type:'post',
-      data:'intern_id='+intern_id,
-      success:function(result){
-        
-        var data=jQuery.parseJSON(result);
-        
-        if(data.gen!=""){
-        var html='<ul><li>Name: '+data.intern_name+'</li> <li>Intern id: '+data.intern_id+'</li><li>Role : '+data.role+'</li><li>Duration : '+data.duration+'</li><li>Start date: '+data.start_date+'</li><li>End date: '+data.end_date+'</li></ul> <img src="img/genuine.png" style="width:100px; height:auto;"/>';
-        }
-        else{
-          var html='<h2>No such interns found for intern id  '+data.intern_id+'. </h2>'
-        }
-        jQuery('#showintern').html(html);
-
-      }
-
-    })
-    }
-    
-    function intern_submit(){
-	    $('#internsubmit').attr('disabled',true);
-      $('#submit_msg').html('Please wait...');
-      jQuery.ajax({
-          url:'internship_sub',
-          type:'post',
-          data:jQuery('#internsub').serialize(),
-          success:function(result){
-            $('#internsubmit').attr('disabled',false);
-            $('#submit_msg').html('');
-            var data=jQuery.parseJSON(result);
-            if(data.status=='success'){
-              swal("Welcome!", "Internship from submitted succesfully. Please check email and mobile ..", "success");
-            }
-            else{
-              swal("sorry!", "Internship from was not submitted succesfully.Please try again .", "error");
-            }
-          }
-      });
-    }
-  
-   
-
-   </script>
-
     <?php
 require('footer.php');
 ?>

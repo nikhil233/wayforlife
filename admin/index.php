@@ -12,12 +12,13 @@ require('header.php');
       echo count($result);
 			?>
 		  </h1>
+		  <i class="mdi mdi-shopping icon-lg text-primary ml-auto"></i>
 		  <div class="d-flex flex-wrap align-items-center">
 			<div>
 			  <h4 class="font-weight-normal">Total internship form submission</h4>
 			  
 			</div>
-			<i class="mdi mdi-shopping icon-lg text-primary ml-auto"></i>
+			
 		  </div>
 		</div>
 	  </div>
@@ -34,12 +35,13 @@ require('header.php');
      
 			?>
 		  </h1>
+		  <i class="mdi mdi-shopping icon-lg text-success ml-auto"></i>
 		  <div class="d-flex flex-wrap align-items-center">
 			<div>
 			  <h4 class="font-weight-normal">Join us</h4>
 			  <p class="text-muted mb-0 font-weight-light">Total Join us submissions</p>
 			</div>
-			<i class="mdi mdi-shopping icon-lg text-success ml-auto"></i>
+			
 		  </div>
 		</div>
 	  </div>
@@ -54,12 +56,13 @@ require('header.php');
       echo count($result);
 			?>
 		  </h1>
+		  <i class="mdi mdi-shopping icon-lg text-danger ml-auto"></i>
 		  <div class="d-flex flex-wrap align-items-center">
 			<div>
 			  <h4 class="font-weight-normal">Contact form submissions</h4>
 			  <p class="text-muted mb-0 font-weight-light">Total contact form submissions</p>
 			</div>
-			<i class="mdi mdi-shopping icon-lg text-danger ml-auto"></i>
+			
 		  </div>
 		</div>
 	  </div>
@@ -74,12 +77,13 @@ require('header.php');
         echo count($result);
 			?>
 		  </h1>
+		  <i class="mdi mdi-shopping icon-lg text-info ml-auto"></i>
 		  <div class="d-flex flex-wrap align-items-center">
 			<div>
 			  <h4 class="font-weight-normal">Total events submission</h4>
 			  <p class="text-muted mb-0 font-weight-light">Total events volunteering submission</p>
 			</div>
-			<i class="mdi mdi-shopping icon-lg text-info ml-auto"></i>
+			
 		  </div>
 		</div>
 	  </div>
@@ -97,12 +101,13 @@ require('header.php');
    
 			?>
 		  </h1>
+		  <i class="mdi mdi-account icon-lg text-primary ml-auto"></i>
 		  <div class="d-flex flex-wrap align-items-center">
 			<div>
 			  <h4 class="font-weight-normal">Total interns you have</h4>
 			  
 			</div>
-			<i class="mdi mdi-food icon-lg text-primary ml-auto"></i>
+			
 		  </div>
 		</div>
 	  </div>
@@ -123,7 +128,7 @@ require('header.php');
 			  <h4 class="font-weight-normal">No of Blogs</h4>
 			  
 			</div>
-			<i class="mdi mdi-account icon-lg text-primary ml-auto"></i>
+			
 		  </div>
 		</div>
 	  </div>
@@ -131,7 +136,7 @@ require('header.php');
   </div>
   <?php
      
-     $sql="SELECT * from joinus order by id desc";
+     $sql="SELECT * from joinus order by id desc LIMIT 5";
      $result=$crud->getData($sql);
       
   ?>

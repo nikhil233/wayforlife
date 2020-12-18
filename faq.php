@@ -3,14 +3,13 @@ require('header.php');
 ?>
 
 
-<section class="banner-top" style="background-image: linear-gradient(to bottom,  rgb(104 133 154 / 88%), rgb(0 0 0 / 52%)), url(./img/passion/work4.jpg);">
+<section class="banner-top faq" style="background-image: linear-gradient(to bottom,  rgb(104 133 154 / 88%), rgb(0 0 0 / 52%)), url(./img/passion/work4.jpg);">
         <div class="container">
       <div class="content">
        
                     <div class="banner_text text-center">
-                        <div class="banner_text_iner" >
-                            <h1>Frequently asked Questions</h1>
-                            
+                        <div class="banner_text_iner " >
+                            <h1>Frequently asked Questions</h1>   
                                
                         </div>
                     </div>

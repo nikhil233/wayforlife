@@ -10,11 +10,16 @@ $sql="SELECT * from interns_det order by id desc";
 $result=$crud->getData($sql);
 ?>
 
+
   <div class="container-fluid">
           <div class="card">
             <div class="card-body">
-              <h4 class="grid_title">Interns database table</h4>
-              <a href="add_interns_data.php" class="add_link">Add interns</a>
+            <div style="display:flex; justify-content:space-between;">
+              <h4 class="grid_title" style="">Verified Interns database table</h4>
+              <div style="text-align:right; padding:10px 0;">
+              <a href="add_interns_data.php" class="add_link btn btn-outline-primary" >Add interns</a>
+              </div>
+            </div>
               <div class="row grid_box">
                 <div class="col-12">
                   <div class="table-responsive">

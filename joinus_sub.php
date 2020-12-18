@@ -19,39 +19,45 @@
     if(isset($_POST['join_pre'])){
       $dbCheckbox = implode(',',$_POST['join_pre']);
     }
-  
+    $status='';
 	$added_on=date('Y-m-d h:i:s');
-	// checking empty fields
-
-	if (!$check_email) {
-		echo 'Please provide proper email.';
-	}	
-	else { 
-		// if all the fields are filled (not empty) 
-        // (name,email_id,dob,phone_no,join_pre,hrsinmonth,profession,address,bloodgrp,intreststat)
-            //insert data to database	
-        // $result = $crud->execute("INSERT INTO joinus(name,email_id,dob,phone_no,join_pre,hrsinmonth,profession,address,bloodgrp,intreststat) VALUES ('$name', '$email', '$dob', '999','a' ,'$hrsinmnth', 'a', '$address', '$bloodgrp','a' )");
-        $status='';
-        $stmt = $mysqli->prepare("INSERT INTO joinus (name,dob,email_id,address,hrsinmonth,bloodgrp,phone_no,join_pre,profession,intreststat,added_on)VALUES (?, ?, ?, ?,? ,?, ?, ?, ?,?,'$added_on' )");
-        $stmt->bind_param('ssssisssss',$name,$dob,$email,$address,$hrsinmnth,$bloodgrp,$phone,$dbCheckbox,$profession,$intreststat);
+    // checking empty fields
+    if (!$check_email) {
+		$status='email-error';
+    }	
+    else{
+        if(preg_match('~[0-9]~',$name)) {
+            $status='name';
+        } 
         
-        $result=$stmt->execute();
-        $msg='<h2>WELCOME TO WAY FOR LIFE</h2>
-        <p>Thanks for submitting our Join us form</p>';
-        $html= $crud->get_mail_template($name,$msg);
-        $crud->send_mail($email,$html,"Welcome To Way for Life");
-        $mobilemsg="Hello, Welcome to Way For Life.Thanks for filling the Join us form. You will be updated with latest.";
-        $crud->sendsms($phone,$mobilemsg);
-        if($result){
-            $status='success';
+        else { 
+            // if all the fields are filled (not empty) 
+            // (name,email_id,dob,phone_no,join_pre,hrsinmonth,profession,address,bloodgrp,intreststat)
+                //insert data to database	
+            // $result = $crud->execute("INSERT INTO joinus(name,email_id,dob,phone_no,join_pre,hrsinmonth,profession,address,bloodgrp,intreststat) VALUES ('$name', '$email', '$dob', '999','a' ,'$hrsinmnth', 'a', '$address', '$bloodgrp','a' )");
+            
+            $stmt = $mysqli->prepare("INSERT INTO joinus (name,dob,email_id,address,hrsinmonth,bloodgrp,phone_no,join_pre,profession,intreststat,added_on)VALUES (?, ?, ?, ?,? ,?, ?, ?, ?,?,'$added_on' )");
+            $stmt->bind_param('ssssisssss',$name,$dob,$email,$address,$hrsinmnth,$bloodgrp,$phone,$dbCheckbox,$profession,$intreststat);
+            
+            $result=$stmt->execute();
+            $msg='<h2>WELCOME TO WAY FOR LIFE</h2>
+            <p>Thanks for submitting our Join us form</p>';
+            $html= $crud->get_mail_template($name,$msg);
+            //$crud->send_mail($email,$html,"Welcome To Way for Life");
+            $mobilemsg="Hello, Welcome to Way For Life.Thanks for filling the Join us form. You will be updated with latest.";
+            //$crud->sendsms($phone,$mobilemsg);
+            if($result){
+                $status='success';
+            }
+            else{
+                $status='error';
+            }
+    
+            $stmt->close();
+            
         }
-        else{
-            $status='error';
-        }
-
-        $stmt->close();
-		
     }
+    
     $arr=array('status'=> $status);
     echo json_encode($arr);
     

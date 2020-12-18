@@ -26,7 +26,7 @@ include_once("config.php");
             </div>
         </div>
     </section> -->
-    <section class="banner-top" style="background-image: linear-gradient(to bottom,  rgb(104 133 154 / 88%), rgb(0 0 0 / 52%)), url(./img/passion/work4.jpg);">
+    <section class="banner-top" style="background-image: linear-gradient(to bottom,  rgb(104 133 154 / 88%), rgb(0 0 0 / 52%)), url(./img/hero/JoinUs.jpg);">
         <div class="container">
       <div class="content">
        
@@ -56,32 +56,33 @@ include_once("config.php");
         <div class="container ">
             <form name="form1" method="post" class="joinusform" id="joinussub">
                 <div class="form-group">
-                    <label for="inputname">Name</label>
-                    <input type="text" class="form-control" id="inputname" name="name" placeholder="Name">
+                    <label for="inputname">Name  <span style="color:red;">*</span></label>
+                    <input type="text" class="form-control" id="inputname" name="name" placeholder="Name" required>
                   </div>
                 
                   <div class="form-group ">
-                    <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email">
+                    <label for="inputEmail4">Email <span style="color:red;">*</span></label>
+                    <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email" required>
                   </div>
                   <div class="form-group ">
-                    <label for="inputdob">Date Of Birth</label>
-                    <input type="date" class="form-control" id="inputdob" name="dob" placeholder="DOB">
+                    <label for="inputdob">Date Of Birth <span style="color:red;">*</span></label>
+                    <input type="date" class="form-control" id="inputdob" name="dob" placeholder="DOB" required>
                   </div>
                
                 <div class="form-group">
-                  <label for="inputAddress">Address</label>
-                  <input type="text" class="form-control" id="inputAddress" name="address" placeholder="Address">
+                  <label for="inputAddress">Address <span style="color:red;">*</span></label>
+                  <input type="text" class="form-control" id="inputAddress" name="address" placeholder="Address" required>
                 </div>
                 
                 
                 <div class="form-group ">
-                      <label for="inputno">Phone No.</label>
-                      <input type="text" class="form-control" id="inputno" placeholder="" name="phoneno">
+                      <label for="inputno">Phone No. <span style="color:red;">*</span></label>
+                      <input type="number" required class="form-control  no-arrow" id="inputno" placeholder="Mobile no 10 digits" name="phoneno">
+                      <p id="ph_msg" style="color:red;"></p> 
                 </div>
                   <div class="form-group ">
-                    <label for="inputState" >Blood group</label>
-                    <select id="inputState" name="bloodgrp" class="form-control">
+                    <label for="inputState" >Blood group <span style="color:red;">*</span></label>
+                    <select id="inputState" name="bloodgrp" class="form-control" required>
                       <option selected>Choose</option>
                       <option>O+</option>
                       <option>O-</option>
@@ -95,13 +96,13 @@ include_once("config.php");
                     </select>
                   </div>
                   <div class="form-group ">
-                    <label for="inputdedic">How many hours in a month can you contribute? </label>
-                    <input type="number" class="form-control" id="inputdedic" placeholder="" name="hrsinmnth">
+                    <label for="inputdedic">How many hours in a month can you contribute?  <span style="color:red;">*</span></label>
+                    <input type="number" class="form-control no-arrow" id="inputdedic" placeholder="How many hours can contribute " name="hrsinmnth" required>
                   </div>
                   
                 
                 <div>
-                    <label for="inputdedic">How would you prefer to join our NGO group? </label>
+                    <label for="inputdedic">How would you prefer to join our NGO group?  <span style="color:red;">*</span></label>
                     <div class="form-check" >
                         <input class="form-check-input" type="checkbox" value=" Add me to Whatsapp group" name="join_pre[]" >
                         <label class="form-check-label text-dark" for="defaultCheck1">
@@ -124,12 +125,12 @@ include_once("config.php");
                 </div>
                 
                   <div class="form-group ">
-                    <label for="inputEmail4">Profession.</label>
-                    <input type="text" class="form-control" id="inputEmail4" name="profession" />
+                    <label for="inputEmail4">Profession. <span style="color:red;">*</span></label>
+                    <input type="text" class="form-control" id="inputEmail4" name="profession" placeholder="Profession" required/>
                   </div>
                   <div class="form-group ">
-                    <label for="inputdob">Tell us what made you interested in volunteering with Us.</label>
-                    <input type="text" class="form-control" id="inputdob" name="intreststat" />
+                    <label for="inputdob">Tell us what made you interested in volunteering with Us. <span style="color:red;">*</span></label>
+                    <input type="text" class="form-control" id="inputdob" name="intreststat" placeholder="Tell us why" />
                   </div>
                 
                 <div class="card mt-3 pl-2 pl-2">
@@ -138,38 +139,17 @@ include_once("config.php");
                         <li> Once you submit this application, you will receive an e-mail with a link to join our official WhatsApp group for better communication.</li>
                         <li>Upcoming activities will be notified via Email, WhatsApp group, Telegram and other social media platforms.</li>
                         <li>Join us during the activities and create an impact.</li>
-                        <p class="mt-3 text-dark">If you face any issue during the process feel free to reach us at <a href=" www.wayforlife.org/contactus"> www.wayforlife.org/contactus</a></p>
+                        <p class="mt-3 text-dark">If you face any issue during the process feel free to reach us at <a href=" www.wayforlife.org/contact"> www.wayforlife.org/contact</a></p>
                     </ol>
                 </div>
                 
-                <button type="submit" name="submit" class="btn btn-primary mt-3" id="joinsubmit" onclick="joinus_submit()">Submit</button>
+                <button type="submit" name="submit" class="btn btn-primary mt-3 button" id="joinsubmit" >Submit</button>
                 <p id="wait_" style="color:red;"></p>
               </form>
         </div>
     </section>
 
-  <script type="text/javascript">
-    function joinus_submit(){
-	    $('#joinsubmit').attr('disabled',true);
-      $('#wait_').html('Please wait...');
-      jQuery.ajax({
-          url:'joinus_sub',
-          type:'post',
-          data:jQuery('#joinussub').serialize(),
-          success:function(result){
-            $('#joinsubmit').attr('disabled',false);
-            $('#wait_').html('');
-            var data=jQuery.parseJSON(result);
-            if(data.status=='success'){
-              swal("Welcome!", "Join us Form submitted succesfully.Please check email and mobile .", "success");
-            }
-            else{
-              swal("sorry!", "Join us Form  was not submitted succesfully.Please try again .", "error");
-            }
-          }
-      });
-    }
-  </script>
+    
 <?php
 require('footer.php');
 ?>

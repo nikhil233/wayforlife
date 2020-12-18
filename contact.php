@@ -2,9 +2,6 @@
 require('header.php');
 include_once("config.php");
 
-// if(isset($_POST['submit'])) {	
-	
-// }
 
 
 
@@ -25,15 +22,13 @@ include_once("config.php");
       </div>
     </div>
   </section> -->
-  <section class="banner-top" style="background-image: linear-gradient(to bottom,  rgb(104 133 154 / 88%),rgb(0 0 0 / 52%)), url(./img/passion/work4.jpg);">
+  <section class="banner-top" style="background-image: linear-gradient(to bottom,  rgb(104 133 154 / 88%),rgb(0 0 0 / 52%)), url(./img/hero/contactus.jpg);">
         <div class="container">
       <div class="content">
        
                     <div class="banner_text text-center">
                         <div class="banner_text_iner" >
-                            <h1>Contact us</h1>
-                            
-                               
+                            <h1> Get in Touch</h1>
                         </div>
                     </div>
                
@@ -49,9 +44,26 @@ include_once("config.php");
   <section class="contact-section section_padding">
     <div class="container">
       <div class="d-none d-sm-block mb-5 pb-4">
-        <div id="map" style="height: 480px;"></div>
-        
+      <div class="map-responsive">
 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62228.366798876166!2d77.616164!3d12.890164!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe8edacbc62974a82!2sWay%20For%20Life!5e0!3m2!1sen!2sin!4v1601208183719!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          </div>
+
+          <style>
+            .map-responsive{
+              overflow:hidden;
+              padding-bottom:56.25%;
+              position:relative;
+              height:0;
+          }
+          .map-responsive iframe{
+              left:0;
+              top:0;
+              height:100%;
+              width:100%;
+              position:absolute;
+          }
+          </style>
       </div>
 
 
@@ -72,30 +84,32 @@ include_once("config.php");
               <div class="col-sm-4">
                 <div class="form-group">
                   <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter your name'" placeholder='Enter your name'>
+                    onblur="this.placeholder = 'Enter your name'" placeholder='Enter your name' required>
+                    <p id="name_err" style="color:red;"></p>
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="form-group">
                   <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter email address'" placeholder='Enter email address'>
+                    onblur="this.placeholder = 'Enter email address'" placeholder='Enter email address' required>
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="form-group">
-                  <input class="form-control" name="phone" id="phone" type="phone" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter phone no'" placeholder='Enter phone no'>
+                  <input class="form-control no-arrow" name="phone" id="phone" type="number" onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter phone no'" placeholder='Enter phone no' required>
+                    <p id="ph_msg" style="color:red;"></p> 
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-group">
                   <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter Subject'" placeholder='Enter Subject'>
+                    onblur="this.placeholder = 'Enter Subject'" placeholder='Enter Subject'required>
                 </div>
               </div>
             </div>
             <div class="form-group mt-3">
-              <button type="submit" class="button button-contactForm btn_1" name="submit" id="con_sub" onclick="con_subm()" >Send Message <i class="flaticon-right-arrow"></i> </button>
+              <button type="submit" class="button button-contactForm btn_1" name="submit" id="con_sub" >Send Message <i class="flaticon-right-arrow"></i> </button>
               <p id="wait_" style="color:red;"></p>
             </div>
           </form>
@@ -108,8 +122,11 @@ include_once("config.php");
                 font-weight:800;
                 font-size:20px!important;
               }
+              .contact-info .fa{
+                color:#000!important;
+              }
             </style>
-            <span class="contact-info__icon"><i class="ti-home"></i></span>
+            <span class="contact-info__icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
             <div class="media-body">
               <h3>Way For Life</h3>
               <p>No 28, 1st cross, 4th main
@@ -117,14 +134,16 @@ include_once("config.php");
             </div>
           </div>
           <div class="media contact-info">
-            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+            <span class="contact-info__icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
             <div class="media-body">
-              <h3>+91   789-999-3789</h3>
-              <p>Mon to Fri 9am to 6pm</p>
+              <h3>+917899993789</h3>
+              
+              <h3>+919902560105</h3>
+              
             </div>
           </div>
           <div class="media contact-info">
-            <span class="contact-info__icon"><i class="ti-email"></i></span>
+            <span class="contact-info__icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
             <div class="media-body">
               <h3> <a href="mailto:contact@wayforlife.org"> contact@wayforlife.org</a></h3>
               <p>Send us your query anytime!</p>
@@ -135,28 +154,7 @@ include_once("config.php");
     </div>
   </section>
   <!-- ================ contact section end ================= -->
-  <script type="text/javascript">
-    function con_subm(){
-	    $('#con_sub').attr('disabled',true);
-      $('#wait_').html('Please wait...');
-      jQuery.ajax({
-          url:'contactus_sub',
-          type:'post',
-          data:jQuery('#con_form').serialize(),
-          success:function(result){
-            $('#con_sub').attr('disabled',false);
-            $('#wait_').html('');
-            var data=jQuery.parseJSON(result);
-            if(data.status=='success'){
-              swal("Welcome!", "Thank you for writing to us. Form submitted succesfully.Please check email .", "success");
-            }
-            else{
-              swal("Sorry!", "Form was not submitted succesfully.Please try again.", "error");
-            }
-          }
-      });
-    }
-  </script>
+  
   <?php
 require('footer.php');
 ?>

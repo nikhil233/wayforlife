@@ -3,26 +3,8 @@ require('header.php');
 ?>
 
     <!-- banner part start-->
-    <!-- <section class="banner_part">
-        <div class="container">
-            <div class="row">
-                <div class=" col-lg-12 col-md-12 col-12 pt-5 ">
-                    <div class="banner_text text-center">
-                        <div class="banner_text_iner" >
-                            <h1>ABOUT US</h1>
-                           
-                            <div>
-                            <a href="#" class="btn_2 mr-4">Join Us</a>
-                            <a href="#" class="btn_2">Donate</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </section> -->
-    <section class="banner-top" style="background-image: linear-gradient(to bottom,  rgb(104 133 154 / 88%), rgb(0 0 0 / 52%)), url(./img/passion/work4.jpg);">
+    
+    <section class="banner-top" style="background-image: linear-gradient(to bottom,  rgb(104 133 154 / 88%), rgb(0 0 0 / 52%)), url(./img/hero/aboutus.jpg);">
         <div class="container">
       <div class="content">
        
@@ -31,8 +13,8 @@ require('header.php');
                             <h1>About Us</h1>
                             
                                 <div>
-                                <a href="Joinus" class="btn_2 mr-4">Join Us</a>
-                                <a href="#" class="btn_2">Donate</a>
+                                <a href="Joinus" class="btn_2">Join Us</a>
+                               
                                 </div>
                         </div>
                     </div>
@@ -50,7 +32,7 @@ require('header.php');
         <div class="container">
             <div class="row ">
                 <div class="col-xl-8">
-                    <div class="section_tittle text-center">
+                    <div class="section_tittle ">
                         
                         <h2>About Way for Life</h2>
                     </div>
@@ -58,13 +40,13 @@ require('header.php');
             </div>
             <div class="row justify-content-center">
                 <p class="about font-weight-bold ml-2" style="line-height: 30px;">
-                    <b> Way for Life </b> 
+                     Way for Life
                      is a registered, youth-driven NGO, based in Bengaluru, Karnataka, founded in the year 2017. The footsteps of our approaches to community development and environmental sustenance have been ideated and undertaken by the energetic body of youth volunteers who write our story through reshaping yours. What our action survives and thrives on is sustained by the dynamism of considerate, passionate young volunteers whose outlook on life aligns with ours! The desire to uplift the marginalized sections of the society, coupled with an equal emphasis on commonly neglected issues such as Blood requirements, Relief programs, and educational and environmental issues have comprised the major activities which Way for Life engages in. Our most referenced contribution to the field of Social Service is usually our involvement and intervention programs with Government schools. Our assistance varies from reconnecting the broken dots on the walls of these schools to coloring the very same structures - through the supply of physical equipment, the labor, and the selfless voluntary teachers who transform the lives of the innocent day-dreamers into problem-solvers and goal-achievers. 
                     <br>
                     The issues which our organization seeks to impact a positive change in are limitless – hence, the open-ended usage of the word ‘Life’ in its name. Owing to this interest and determination to involve and serve ourselves in whatever is the need of the hour, Way for Life is functional in 7 cities across India, namely: Chennai, Coimbatore, Hyderabad, Pune, Mumbai and Delhi and tackles a multitude of issues pertinent and peculiar to these cities. Way for Life, through its 200+ events and recurring activities in the past few years, has strived to take actions that result in long-lasting positive changes to whoever the beneficiaries may have been, and whatever issues that we have attempted to placate. A wayward life is not the most beneficial way forward. Our steps taken collectively as an NGO for the past few years have been an ascension in the livelihoods of not only our beneficiaries but our volunteers and partners too. Providing each of these souls involved in the action an ability to not only hope for a better future but actually seeing it to fruition is an assurance that our work is one that is leading our nation in the right direction. Our challenges are endless, but our determination is boundless too. Together, we have and we shall continue to overcome whatever obstacles stand in our efforts in paving the way for better lives.  
                 </p>
                 <div class="text-center">
-                    <button type="button" class="btn_2 mt-4">Donate Now</button>
+                    <a href="https://pages.razorpay.com/pl_EaJKdxzKa2ntCt/view " target="_blank" class="btn_2 mt-4">Donate Now</a>
                 </div>
                 
             </div>

@@ -19,7 +19,7 @@ function validate() {
 
 // }
 
-$sql="SELECT * from events order by id desc";
+$sql="SELECT * from events where status<>'Completed' order by id desc";
 $result=$crud->getData($sql);
 
 
@@ -43,7 +43,7 @@ $result=$crud->getData($sql);
             </div>
         </div>
     </section> -->
-    <section class="banner-top" style="background-image: linear-gradient(to bottom,  rgb(104 133 154 / 88%),rgb(0 0 0 / 52%)), url(./img/passion/work4.jpg);">
+    <section class="banner-top" style="background-image: linear-gradient(to bottom,  rgb(104 133 154 / 88%),rgb(0 0 0 / 52%)), url(./img/hero/upcoming-activities.jpg);">
         <div class="container">
       <div class="content">
        
@@ -67,21 +67,25 @@ $result=$crud->getData($sql);
               <?php
                         $i=1;
                         foreach ($result as $res) {
+                          if(strtotime('today')>strtotime($res['enddate_time'])){
+                            continue;
+                          }
               ?>
                 <div class="event-card">
                     <div class="w3-card-4 talent_card" >
-                        <div class="image-card " style="min-height: 260px; ">
-                          <img src="<?php echo SITE_EVENT_IMAGE.$res['event_image']?>" alt="" style="min-height: 260px; width: 100%;">
+                        <div class="image-card " style="height: 260px; ">
+                          <img src="<?php echo SITE_EVENT_IMAGE.$res['event_image']?>" alt="" style="height: 260px; width: 100%;">
                         </div>
                         <div class="card-cont">
                           <h2 style="font-size: 21px;"><?php echo $res['event_name']?> </h2>
-                          <p style=" font-weight: 350;"><?php echo $res['event_desc']?></p>
+                          <p style=" font-weight: 350; word-break:break-word;"><?php echo $res['event_desc']?></p>
                           <div class="date-time">
                             <ul>
                                 Timings:
                                 <li>Start:<?php echo $res['startdate_time']?></li>
                                 <li>End:<?php echo $res['enddate_time']?></li>
                             </ul>
+                            <p class="black-text">Location:<?php echo $res['location']?></p>
                           </div>
                         </div>
                         <button class="event-btn btn " type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="<?php echo $res['event_name']?>">Be a volunter</button>
@@ -146,7 +150,8 @@ $result=$crud->getData($sql);
                     <form method="post" name="form1" id="event_sub">
                       <div class="form-group">
                         <label for="inputname" class="col-form-label">Name</label>
-                        <input type="text" class="form-control" id="inputname" name="name">
+                        <input type="text" class="form-control" id="inputname" name="name" placeholder="Name">
+                        <p id="name_err" style="color:red;"></p>
                       </div>
                       <div class="form-group">
                         <input type="hidden" class="form-control" id="inputevent" name="event" value="">
@@ -161,12 +166,13 @@ $result=$crud->getData($sql);
                   </div>
                   <div class="form-group ">
                       <label for="inputno">Phone No.</label>
-                      <input type="text" class="form-control" id="inputno" placeholder="" name="phoneno">
+                      <input type="number" class="form-control no-arrow" id="inputno" placeholder="Phone no" name="phoneno">
+                      <p id="ph_msg" style="color:red;"></p> 
                  </div>
                       
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" name="submit" id="event_submit" onclick="eventsubmit()">Submit</button>
+                        <button type="submit" class="btn btn-primary button" name="submit" id="event_submit" >Submit</button>
                         <p id="wait_" style="color:red;"></p>
                       </div>
                   </form>
@@ -174,7 +180,11 @@ $result=$crud->getData($sql);
                 </div>
               </div>
             </div>
-    <script>
+    
+<?php
+require('footer.php');
+?>
+<script>
     $(function(){
       $('#exampleModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget); // Button that triggered the modal
@@ -185,29 +195,6 @@ $result=$crud->getData($sql);
       });
     });
     
-    function eventsubmit(){
-	    $('#event_submit').attr('disabled',true);
-      $('#wait_').html('Please wait...');
-      jQuery.ajax({
-          url:'eve_vol_sub',
-          type:'post',
-          data:jQuery('#event_sub').serialize(),
-          success:function(result){
-            $('#event_submit').attr('disabled',false);
-            $('#wait_').html('');
-            var data=jQuery.parseJSON(result);
-            if(data.status=='success'){
-              $('#exampleModal').removeClass('show');
-              swal("Welcome!", "Events volunterring submitted succesfully.Please check email and mobile.", "success");
-            }
-            else{
-              swal("sorry!", "Events volunterring from was not submitted succesfully.Please try again .", "error");
-            }
-          }
-      });
-    }
+    
   
     </script>
-<?php
-require('footer.php');
-?>

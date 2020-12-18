@@ -2,6 +2,10 @@
 require('header.php');
 $sql="SELECT * from blog order by id desc";
 $result=$crud->getData($sql);
+if(isset($_GET['title'])){
+    $title = $crud->escape_string($_GET['title']);
+}
+
 ?>
 <style>
 .blog-body a{
@@ -12,7 +16,7 @@ $result=$crud->getData($sql);
 }
 
 </style>
-<section class="banner-top" style="background-image: linear-gradient(to bottom,  rgb(104 133 154 / 88%), rgb(0 0 0 / 52%)), url(./img/passion/work4.jpg);">
+<section class="banner-top" style="background-image: linear-gradient(to bottom,  rgb(104 133 154 / 88%), rgb(0 0 0 / 52%)), url(<?php echo FRONT_SITE_PATH?>/img/passion/work4.jpg);">
         <div class="container">
       <div class="content">
        
@@ -67,10 +71,26 @@ $result=$crud->getData($sql);
                             
                             $areacontroller='false';
                             foreach ($result as $res) {
+
                                 $active='';
-                                if($i==1){
-                                    $active="active";
+                                if(isset($_GET['title'])){
+                                   
+                                    if(str_replace( " ", "-", $res['blog_title'])==$title){
+                                    $active="active ";
                                     $areacontroller='true';
+                                    
+                                    }
+                                    else{
+                                        $active='';
+                                        $areacontroller='false';
+                                    }
+                                }
+                                if(!isset($_GET['title'])){
+                                    if($i==1){
+                                        $active="active";
+                                        $areacontroller='true';
+                                        
+                                    }
                                 }
                             ?>
                            <li class="<?php echo $active ?> mt-3"><a data-toggle="tab" href="#tab<?php echo $i ?>">
@@ -143,16 +163,29 @@ $result=$crud->getData($sql);
                             $areacontroller='false';
                             foreach ($result as $res) {
                                 $activea='';
-                                if($i==1){
-                                    $activea="in active show";
-                                    $areacontroller='true';
+                                if(isset($_GET['title'])){
+                                    if(str_replace( " ", "-", $res['blog_title'])==$title){
+                                        $activea="active show";
+                                        $areacontroller='true';
+                                        
+                                        }
+                                    else{
+                                            $activea='';
+                                            $areacontroller='false';
+                                     }
                                 }
+                                if(!isset($_GET['title'])){
+                                    if($i==1){
+                                        $activea="active show";
+                                        $areacontroller='true';
+                                    }
+                                    }
                         ?>
                         <div id="tab<?php echo $i ?>" class="tab-pane fade <?php echo $activea ?>">
                             <h1><?php echo $res['blog_title'] ?></h1>
                             <img src="<?php echo  SITE_BLOG_IMAGE.$res['blog_image'] ?>" alt="">
                             
-                            <p class="blog-body"><?php echo $res['blog_body'] ?></p>
+                            <p class="blog-body" style="word-break:break-word; white-space: pre-wrap;"><?php echo $res['blog_body'] ?></p>
 
                             <div class="auth mt-3" style="padding:20px 60px; background-color:#ececec;">
                                 <h2>Author : <?php echo $res['blog_author'] ?></h2>

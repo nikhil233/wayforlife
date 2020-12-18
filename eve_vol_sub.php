@@ -11,32 +11,37 @@
     $event =  $crud->escape_string($_POST['event']);
     $check_email = $validation->is_email_valid($_POST['email']);
     $added_on=date('Y-m-d h:i:s');
-
+    $status='';
     if (!$check_email) {
-		echo 'Please provide proper email.';
+		$status='email-error';
 	}	
 	else { 
-        $msg='<h2>WELCOME TO WAY FOR LIFE</h2>
-        <p>Thanks for submitting the volunteering form of '.$event.' Event </p>';
-        $html= $crud->get_mail_template($name,$msg);
-        $crud->send_mail($email,$html,"Submission of $event Volunterring form");
-        $mobilemsg="Dear Volunteer, 
-        Thank you for registering , start volunteering because it #startswithyou
-        Click the below link to join Way For Life - Volunteering Community.
-        https://chat.whatsapp.com/JOoRon6KBHOLheB6Hi0D9D";
-        $crud->sendsms($phone,$mobilemsg);
-        // $result = $crud->execute("INSERT INTO joinus(name,email_id,dob,phone_no,join_pre,hrsinmonth,profession,address,bloodgrp,intreststat) VALUES ('$name', '$email', '$dob', '999','a' ,'$hrsinmnth', 'a', '$address', '$bloodgrp','a' )");
-        $stmt = $mysqli->prepare("INSERT INTO event_participants (name,email_id,address,phone_no,event_name,added_on)VALUES (?, ?, ?, ?,?,'$added_on' )");
-        $stmt->bind_param('sssss',$name,$email,$address,$phone,$event);
-        $result=$stmt->execute();
-        if($result){
-            $status='success';
+        if(preg_match('~[0-9]~',$name)) {
+            $status='name';
+        } 
+        
+        else { 
+            $msg='<h2>WELCOME TO WAY FOR LIFE</h2>
+            <p>Thanks for submitting the volunteering form of '.$event.' Event </p>';
+            $html= $crud->get_mail_template2($name,$msg);
+            $crud->send_mail($email,$html,"Submission of $event Volunterring form");
+            $mobilemsg="Dear Volunteer, 
+            Thank you for registering , start volunteering because it #startswithyou
+            Click the below link to join Way For Life - Volunteering Community.
+            https://chat.whatsapp.com/JOoRon6KBHOLheB6Hi0D9D";
+            //$crud->sendsms($phone,$mobilemsg);
+            // $result = $crud->execute("INSERT INTO joinus(name,email_id,dob,phone_no,join_pre,hrsinmonth,profession,address,bloodgrp,intreststat) VALUES ('$name', '$email', '$dob', '999','a' ,'$hrsinmnth', 'a', '$address', '$bloodgrp','a' )");
+            $stmt = $mysqli->prepare("INSERT INTO event_participants (name,email_id,address,phone_no,event_name,added_on)VALUES (?, ?, ?, ?,?,'$added_on' )");
+            $stmt->bind_param('sssss',$name,$email,$address,$phone,$event);
+            $result=$stmt->execute();
+            if($result){
+                $status='success';
+            }
+            else{
+                $status='error';
+            }
+            $stmt->close();
         }
-        else{
-            $status='error';
-        }
-        $stmt->close();
-    
 	
 	}
 

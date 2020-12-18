@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 /*------------------------------------------------------------------
+
 -------------------------------------------------------------------*/
 /*-------------------------------------------------------------------
   ===== Table of Contents =====
@@ -19215,7 +19220,7 @@ input:focus {
 /* Typography */
 body {
   font-size: 1rem;
-  font-family: "Roboto", sans-serif;
+  font-family: "Loto", sans-serif;
   font-weight: initial;
   line-height: normal;
   -webkit-font-smoothing: antialiased;
